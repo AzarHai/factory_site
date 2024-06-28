@@ -130,7 +130,7 @@ if(!isset($_COOKIE['user'])) {
         <form action="auth.php" method="post">
           <input type="text" class="form-control mb-3" name="login" id="login" placeholder="Введите логин">
           <input type="password" class="form-control mb-3" name="pass" id="pass" placeholder="Введите пароль">
-          <button class="btn btn-success">Войти</button>
+          <button class="btn btn-success">огромный хуй</button>
         </form>
       </div>
     </div>
