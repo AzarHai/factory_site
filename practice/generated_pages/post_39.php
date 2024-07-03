@@ -4,7 +4,7 @@
                             <meta charset='UTF-8' />
                             <meta http-equiv='X-UA-Compatible' content='IE=edge' />
                             <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-                            <title>434</title>
+                            <title>dasd</title>
                             <style>
                             /* Вставьте ваш CSS стилизацию здесь */
                             body {
@@ -80,12 +80,7 @@
                   </div>
                 </nav>
               </header><article>
-                            <h1><b>434</b></h1><img src='D:\OSPanel\domains\practice\uploads/uploads/' alt='Изображение поста'><p>33<br />
-323<br />
-434<br />
-5656<br />
-6454<br />
-767</p>
+                            <h1><b>dasd</b></h1><img src='D:\OSPanel\domains\practice\uploads/uploads/' alt='Изображение поста'><p>asdasd</p>
                             <p>Автор: Артур</p>
                           </article><footer>
                            

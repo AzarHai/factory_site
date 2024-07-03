@@ -27,7 +27,6 @@ if ($result->num_rows > 0) {
                             <meta name='viewport' content='width=device-width, initial-scale=1.0' />
                             <title>{$row["title"]}</title>
                             <style>
-                            /* Вставьте ваш CSS стилизацию здесь */
                             body {
                                 margin: 0;
                                 padding: 0;
@@ -66,7 +65,7 @@ if ($result->num_rows > 0) {
                     </head>
                     <body>";
 
-                    $html_content .= "<header>
+        $html_content .= "<header>
                     <nav class=\"navbar navbar-expand-lg bg-body-tertiary\">
                       <div class=\"container-xxl\">
                         <a class=\"navbar-brand\" href=\"../index.php\">GordonRamsayLoves</a>
@@ -93,15 +92,13 @@ if ($result->num_rows > 0) {
                               <a class=\"nav-link\" href=\"../lol.php\">Наш ресторан</a>
                             </li>
                           </ul>";
-// Проверка наличия Cookie
-if(!isset($_COOKIE['user'])) {
-  // Если Cookie отсутствует, показываем кнопку Войти
-  $html_content .= "<form class=\"d-flex\">
+
+        if(!isset($_COOKIE['user'])) {
+            $html_content .= "<form class=\"d-flex\">
                         <button class=\"btn btn-primary me-2\" type=\"button\" data-bs-toggle=\"modal\" data-bs-target=\"#loginModal\">Войти</button>
                       </form>";
-} else {
-  // Если Cookie присутствует, показываем кнопку Выйти и выводим изображение в виде уменьшенного круга с контуром и выпадающим списком
-  $html_content .= "<div class=\"dropdown\" style=\"position: relative;\">
+        } else {
+            $html_content .= "<div class=\"dropdown\" style=\"position: relative;\">
                       <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute; top: 100%;\">
                         <li><a class=\"dropdown-item\" href=\"/exit.php\">Выйти</a></li>
                       </ul>
@@ -109,24 +106,23 @@ if(!isset($_COOKIE['user'])) {
                     <div class=\"dropdown\" onmouseover=\"showDropdown()\" onmouseout=\"hideDropdown()\" style=\"margin-top: 10px;\">
                       <img src=\"https://cdn-icons-png.flaticon.com/512/6391/6391572.png\" alt=\"Изображение\" style=\"border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;\">
                     </div>";
-}
-$html_content .= "     </div>
+        }
+        $html_content .= "     </div>
                   </div>
                 </nav>
               </header>";
 
         $html_content .= "<article>
                             <h1><b>{$row["title"]}</b></h1>";
-        
+
         if ($row["img"]) {
             $html_content .= "<img src='../{$row["img"]}' alt='Изображение поста'>";
-
         }
-        
+
         $html_content .= "<p>{$row["content"]}</p>
                             <p>Автор: {$row["user_name"]}</p>
                           </article>";
-        
+
         $html_content .= "<footer>
                            
                           </footer>";
@@ -134,16 +130,12 @@ $html_content .= "     </div>
         $html_content .= "</body>
                         </html>";
 
-        // Создание уникального имени файла для сохранения страницы
         $file_name = "post_" . $row["id"] . ".php";
         $file_path = "generated_pages/" . $file_name;
 
-        // Сохранение HTML-кода страницы в файл
         file_put_contents($file_path, $html_content);
-        echo "<a href='$file_path'>Пост:{$row["title"]}</a><br>";
-       
+        echo "<a href='$file_path'>Пост: {$row["title"]}</a><br>";
     }
-    
 } else {
     echo "Нет постов для создания страниц";
 }

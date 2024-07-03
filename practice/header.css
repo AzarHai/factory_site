@@ -1,0 +1,89 @@
+header {
+    background-color: #f8f9fa; /* Цвет фона */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0; /* Отступы сверху и снизу */
+    text-align: center; /* Центрируем содержимое */
+    position: absolute; /* Фиксированное положение */
+    top: 0; /* Расположить вверху */
+    left: 50%; /* Расположить по центру горизонтали */
+    transform: translateX(-50%); /* Сдвигаем влево на половину ширины элемента */
+    max-width: 1200px; /* Максимальная ширина */
+    width: 100%; /* Занимать всю доступную ширину */
+    z-index: 1000; /* Поднимаем над остальными элементами */
+    border-top: 1px solid #ccc; /* Верхняя граница для разделения секций */
+  }
+
+  footer {
+    background-color: #f8f9fa; /* Цвет фона */
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Тень вверху */
+    padding: 10px 0; /* Отступы сверху и снизу */
+    text-align: center; /* Центрируем содержимое */
+    position: absolute; /* Фиксированное положение */
+    bottom: 0; /* Расположить внизу */
+    left: 50%; /* Расположить по центру горизонтали */
+    transform: translateX(-50%); /* Сдвигаем влево на половину ширины элемента */
+    max-width: 1200px; /* Максимальная ширина */
+    width: 100%; /* Занимать всю доступную ширину */
+    z-index: -1000; /* Поднимаем над остальными элементами */
+    border-top: 1px solid #ccc; /* Верхняя граница для разделения секций */
+  }
+  
+        .title span {
+    display: block;
+    margin-left: 0; /* Убрать фиксированный отступ */
+    margin-top: 20px; /* Примерное значение для вертикального отступа */
+    text-align: center; /* Центрирование текста */
+  }
+  .brand-header {
+    display: flex;
+    align-items: center; /* Выравнивание по центру по вертикали */
+    padding: 10px 0; /* Отступы сверху и снизу */
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирный текст */
+    background-color: #f8f9fa; /* Цвет фона (если нужно) */
+  }
+  
+  .brand-header .navbar-brand {
+    display: flex;
+    align-items: center; /* Выравнивание по центру по вертикали */
+  }
+  .brand-icon {
+    width: 32px; /* Задайте нужный размер значка */
+    height: 32px; /* Задайте нужный размер значка */
+    margin-right: 8px; /* Отступ справа от значка */
+  }
+  .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+      .search-container {
+        position: relative;
+      }
+      .search-container input[type="text"] {
+        width: 0;
+        transition: width 0.4s ease-in-out;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: none;
+      }
+      .search-container input[type="text"].show {
+        width: 200px;
+        padding: 5px;
+        display: block;
+      }
+      .search-button {
+          width: 36px; /* Размер кнопки поиска */
+          height: 36px; /* Размер кнопки поиска */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #ccc; /* Граница кнопки */
+          border-radius: 4px; /* Радиус границы кнопки */
+          background-color: #f8f9fa; /* Цвет фона кнопки */
+          cursor: pointer;
+        }
+        .search-button img {
+          width: 20px; /* Задайте нужный размер значка */
+          height: 20px; /* Задайте нужный размер значка */
+        }
+        

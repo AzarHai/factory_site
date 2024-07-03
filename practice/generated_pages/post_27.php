@@ -69,13 +69,18 @@
                             <li class="nav-item">
                               <a class="nav-link" href="../lol.php">Наш ресторан</a>
                             </li>
-                          </ul><form class="d-flex">
-                        <button class="btn btn-primary me-2" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
-                      </form>     </div>
+                          </ul><div class="dropdown" style="position: relative;">
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="position: absolute; top: 100%;">
+                        <li><a class="dropdown-item" href="/exit.php">Выйти</a></li>
+                      </ul>
+                    </div>
+                    <div class="dropdown" onmouseover="showDropdown()" onmouseout="hideDropdown()" style="margin-top: 10px;">
+                      <img src="https://cdn-icons-png.flaticon.com/512/6391/6391572.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">
+                    </div>     </div>
                   </div>
                 </nav>
               </header><article>
-                            <h1><b>Паста Карбонара</b></h1><img src='../uploads/p_O.jpg' alt='Изображение поста'><p>Приготовление
+                            <h1><b>Паста Карбонара</b></h1><img src='D:\OSPanel\domains\practice\uploads/uploads/p_O.jpg' alt='Изображение поста'><p>Приготовление
 1. Подготавливаем все ингредиенты.
 
 2. Бекон нарезаем соломкой.

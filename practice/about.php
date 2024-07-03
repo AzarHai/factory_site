@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GordonRamsayLoves</title>
-    <link rel="shortcut icon" href="path/to/icon.png" />
+    <link rel="shortcut icon" href="dali.jpg" />
     <link rel="stylesheet" href="./header.css" />
     <style>
       body {
@@ -88,8 +88,7 @@
             </button>
             <input type="text" class="form-control" id="search-input" placeholder="Поиск...">
           </div>
-      </div>
-      </div>
+</div>
     </nav>
   </header>
       
@@ -105,7 +104,7 @@
       <p>&copy 2023 by Arturchik</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-      / Добавляем обработчики событий для работы dropdown и поиска
+      // Добавляем обработчики событий для работы dropdown и поиска
   document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.getElementById('search-button');
     const searchInput = document.getElementById('search-input');
