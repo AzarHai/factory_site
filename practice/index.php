@@ -14,6 +14,12 @@
     margin-right: 32px; /* Отступ справа от значка */
     margin-left: 32px; /* Отступ справа от значка */
   }
+  .brand-icon1 {
+    width: 32px; /* Задайте нужный размер значка */
+    height: 32px; /* Задайте нужный размер значка */
+    margin-right: 0px; /* Отступ справа от значка */
+    margin-left: 15px; /* Отступ справа от значка */
+  }
       body {
         padding-top: 85px; /* Отступ сверху, равный высоте header */
       }
@@ -115,6 +121,16 @@
         transform: translateY(-50%); /* Центрирование по вертикали */
         font-size: 0.6em; 
       }
+      .sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white; /* Убедитесь, что фон совпадает с цветом заголовка */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для визуального отделения */
+    display: none; /* Изначально скрыта */
+}
+
     </style>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -137,57 +153,114 @@
             <p4 class="contact-info2">Email: info@dora.com</p4>
         </div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-xxl">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Главная</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="company.php">О компании</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="about.php">О нас</a></li>
-                  <li><a class="dropdown-item" href="contact.php">Контакты</a></li>
-                  <li><a class="dropdown-item" href="vacance.php">Вакансии</a></li>
-                  <li><a class="dropdown-item" href="postavka.php">Поставка</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="map.php">Карта сайта</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="news.php">Новости</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="catalog.php">Каталог насосов</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.php">Контакты</a>
-              </li>
-            </ul>
-            <div class="search-container">
-              <button class="search-button" type="button" id="search-button">
-                <img src="лупа.png" alt="Icon" class="brand-search">
-              </button>
-              <form action="search.php" method="post">
-              <input type="text" class="form-control" id="search-input" placeholder="Поиск...">
-      </form>
+          <div class="container-xxl">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.php">Главная</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="company.php">О компании</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="about.php">О нас</a></li>
+                    <li><a class="dropdown-item" href="contact.php">Контакты</a></li>
+                    <li><a class="dropdown-item" href="vacance.php">Вакансии</a></li>
+                    <li><a class="dropdown-item" href="postavka.php">Поставка</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="map.php">Карта сайта</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="news.php">Новости</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="catalog.php">Каталог насосов</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.php">Контакты</a>
+                </li>
+              </ul>
+              <div class="search-container">
+                <button class="search-button" type="button" id="search-button">
+                  <img src="лупа.png" alt="Icon" class="brand-search">
+                </button>
+                <form action="search.php" method="post">
+                  <input type="text" class="form-control" id="search-input" placeholder="Поиск...">
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
     </header>
+    <header class="sticky-header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-xxl">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <a class="navbar-brand" href="/index.php">
+                  <img src="4070419.png" alt="Icon" class="brand-icon1">
+                </a>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.php">Главная</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="company.php">О компании</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="about.php">О нас</a></li>
+                    <li><a class="dropdown-item" href="contact.php">Контакты</a></li>
+                    <li><a class="dropdown-item" href="vacance.php">Вакансии</a></li>
+                    <li><a class="dropdown-item" href="postavka.php">Поставка</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="map.php">Карта сайта</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="news.php">Новости</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="catalog.php">Каталог насосов</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.php">Контакты</a>
+                </li>
+              </ul>
+              <div class="search-container">
+                <button class="search-button" type="button" id="search-button">
+                  <img src="лупа.png" alt="Icon" class="brand-search">
+                </button>
+                <form action="search.php" method="post">
+                  <input type="text" class="form-control" id="search-input" placeholder="Поиск...">
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+</header>
+
     <section>
       <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <ol class="carousel-indicators">
@@ -288,6 +361,40 @@
           }
         });
       });
+      document.addEventListener('DOMContentLoaded', function() {
+    const stickyHeader = document.querySelector('.sticky-header');
+    const originalHeader = document.querySelector('header');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > originalHeader.offsetHeight) {
+            stickyHeader.style.display = 'block';
+        } else {
+            stickyHeader.style.display = 'none';
+        }
+    });
+
+    // Обработчики для кнопки поиска
+    const searchButtonSticky = document.getElementById('search-button-sticky');
+    const searchInputSticky = document.getElementById('search-input-sticky');
+
+    searchButtonSticky.addEventListener('click', function() {
+        if (searchInputSticky.classList.contains('show')) {
+            searchInputSticky.classList.remove('show');
+            searchInputSticky.value = '';
+        } else {
+            searchInputSticky.classList.add('show');
+            searchInputSticky.focus();
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!searchButtonSticky.contains(event.target) && !searchInputSticky.contains(event.target)) {
+            searchInputSticky.classList.remove('show');
+            searchInputSticky.value = '';
+        }
+    });
+});
+
     </script>
   </body>
 </html>
