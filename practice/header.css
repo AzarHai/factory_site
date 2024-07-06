@@ -15,8 +15,8 @@ header {
 
   footer {
     background-color: #f8f9fa; /* Цвет фона */
-    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Тень вверху */
-    padding: 10px 0; /* Отступы сверху и снизу */
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1); /* Тень вверху */
+    padding: 10 px 10px; /* Отступы сверху и снизу */
     text-align: center; /* Центрируем содержимое */
     position: absolute; /* Фиксированное положение */
     bottom: 0; /* Расположить внизу */
@@ -47,11 +47,7 @@ header {
     display: flex;
     align-items: center; /* Выравнивание по центру по вертикали */
   }
-  .brand-icon {
-    width: 32px; /* Задайте нужный размер значка */
-    height: 32px; /* Задайте нужный размер значка */
-    margin-right: 8px; /* Отступ справа от значка */
-  }
+  
   .dropdown:hover .dropdown-menu {
         display: block;
       }
