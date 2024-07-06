@@ -12,7 +12,9 @@ header {
     z-index: 1000; /* Поднимаем над остальными элементами */
     border-top: 1px solid #ccc; /* Верхняя граница для разделения секций */
   }
-
+  body {
+    padding-top: 85px; /* Отступ сверху, равный высоте header */
+  }
   footer {
     background-color: #f8f9fa; /* Цвет фона */
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1); /* Тень вверху */

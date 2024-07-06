@@ -197,8 +197,9 @@
                   <img src="лупа.png" alt="Icon" class="brand-search">
                 </button>
                 <form action="search.php" method="post">
-                  <input type="text" class="form-control" id="search-input" placeholder="Поиск...">
+                  <input type="text" class="form-control" id="search-input" placeholder="Поиск..." name="query">
                 </form>
+
               </div>
             </div>
           </div>
@@ -253,7 +254,7 @@
                   <img src="лупа.png" alt="Icon" class="brand-search">
                 </button>
                 <form action="search.php" method="post">
-                  <input type="text" class="form-control" id="search-input" placeholder="Поиск...">
+                  <input type="text" class="form-control" id="search-input" placeholder="Поиск..." name="query">
                 </form>
               </div>
             </div>
