@@ -16,7 +16,7 @@ header {
     padding-top: 85px; /* Отступ сверху, равный высоте header */
   }
   footer {
-    background-color: #f8f9fa; /* Цвет фона */
+    background-color:black; /* Цвет фона */
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1); /* Тень вверху */
     padding: 10 px 10px; /* Отступы сверху и снизу */
     text-align: center; /* Центрируем содержимое */

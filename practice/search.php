@@ -2,27 +2,107 @@
 if (isset($_POST['query'])) {
     $query = htmlspecialchars($_POST['query']); // Получаем поисковый запрос и защищаемся от XSS
     $pages = [
-        'index.php' => 'Главная',
-        'company.php' => 'Информация о компании, история, миссия и ценности.',
-        'about.php' => 'Подробнее о нас и нашей команде.',
-        'contact.php' => 'Контактная информация для связи с нами.',
-        'vacance.php' => 'Актуальные вакансии и возможности для трудоустройства.',
-        'postavka.php' => 'Информация о поставках и партнёрах.',
-        'map.php' => 'Карта сайта для быстрого навигации.',
-        'news.php' => 'Последние новости и события компании.',
-        'catalog.php' => 'Каталог насосов и оборудования, которые мы предлагаем.'
-    ];
+        'index.php' => [
+            'title' => 'Главная',
+            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
+                          <p class="lead">Наша компания работает с 1996 года. Основными клиентами являются приборостроительные заводы, заводы точного машиностроения,предприятия авиационно-космической техники, центры стандартизации и метрологии, научно-исследовательские институты и учреждения высшего образования.
+            Мы поставляем и внедряем измерительный инструмент и системы лучших мировых производителей.
+            Наши инженеры по оборудованию решают сложнейшие измерительные задачи и обучают заказчиков.
+            Наша сервисная служба обеспечивает постоянную техническую поддержку всего поставляемого оборудования.
+            Наш коммерческий отдел всегда заботится о наших заказчиках.
+            Все это позволяет нам быть одним из крупнейших поставщиков измерительной техники в РФ и странах СНГ.</p>',
+            'date' => '2023-01-01',
+            'author' => 'Администратор'
+        ],
+        'company.php' => [
+            'title' => 'Информация о компании, история, миссия и ценности.',
+            'content' => '<p>Описание компании...</p>',
+            'date' => '2023-01-01',
+            'author' => 'Администратор'
+        ],
+        'about.php' => [
+              'title' => 'Подробнее о нас и нашей команде.',
+              'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
+                            <p class="lead">Наша компания работает с 1996 года...',
+                'date' => '2023-01-01',
+              'author' => 'Администратор'
+        ],
+        'contact.php' => [
+              'title' => 'Контактная информация для связи с нами.',
+              'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
+                            <p class="lead">Наша компания работает с 1996 года...',
+              'date' => '2023-01-01',
+              'author' => 'Администратор'
+        ],
+        'vacance.php' => [
+            'title' => 'Актуальные вакансии и возможности для трудоустройства.',
+            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
+                          <p class="lead">Наша компания работает с 1996 года...',
+            'date' => '2023-01-01',
+            'author' => 'Администратор'
+        ],
+        'postavka.php' => [
+            'title' => 'Информация о поставках и партнёрах.',
+            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
+                          <p class="lead">Наша компания работает с 1996 года...',
+            'date' => '2023-01-01',
+            'author' => 'Администратор'
+        ],
+        'map.php' => [
+            'title' => 'Карта сайта для быстрого навигации.',
+            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
+                          <p class="lead">Наша компания работает с 1996 года...',
+            'date' => '2023-01-01',
+            'author' => 'Администратор'],
+        'news.php' => [
+            'title' => 'Последние новости и события компании.',
+            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
+                          <p class="lead">Наша компания работает с 1996 года...',
+            'date' => '2023-01-01',
+            'author' => 'Администратор'],
+        'catalog.php' => [
+            'title' => 'Каталог насосов и оборудования, которые мы предлагаем.',
+            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
+                          <p class="lead">Наша компания работает с 1996 года...',
+            'date' => '2023-01-01',
+            'author' => 'Администратор']
+     ];
 
-    $results = [];
+     $results = [];
 
-    // Ищем совпадения, игнорируя регистр
-    foreach ($pages as $page => $content) {
-        if (stripos($content, $query) !== false) {
-            $results[$page] = $content;
-        }
-    }
-}
-?>
+     // Максимально допустимое расстояние Левенштейна для поиска похожих слов
+     $max_distance = 2;
+ 
+     // Ищем совпадения, игнорируя регистр
+     foreach ($pages as $page => $data) {
+         $title = $data['title'];
+         $content = strip_tags($data['content']); // Удаляем HTML-теги из содержимого
+ 
+         // Если есть точное совпадение в заголовке или содержимом
+         if (stripos($title, $query) !== false || stripos($content, $query) !== false) {
+             $results[$page] = [
+                 'title' => $title,
+                 'date' => $data['date'],
+                 'author' => $data['author']
+             ];
+         } else {
+             // Разбиваем заголовок и содержимое на слова и проверяем каждое слово
+             $words = array_merge(explode(' ', $title), explode(' ', $content));
+             foreach ($words as $word) {
+                 // Если расстояние Левенштейна между словом и запросом меньше или равно допустимому, добавляем результат
+                 if (levenshtein(mb_strtolower($word), mb_strtolower($query)) <= $max_distance) {
+                     $results[$page] = [
+                         'title' => $title,
+                         'date' => $data['date'],
+                         'author' => $data['author']
+                     ];
+                     break; // Достаточно одного совпадения, чтобы добавить страницу в результаты
+                 }
+             }
+         }
+     }
+ }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,19 +113,36 @@ if (isset($_POST['query'])) {
     <link rel="icon" href="water_pump_icon_229881.ico">
     <link rel="stylesheet" href="./header.css" !important;/>
     <style>
-      .brand-icon {
-    width: 125px; /* Задайте нужный размер значка */
-    height: 125px; /* Задайте нужный размер значка */
-    margin-right: 32px; /* Отступ справа от значка */
-    margin-left: 32px; /* Отступ справа от значка */
-  }
-  .brand-icon1 {
-    width: 32px; /* Задайте нужный размер значка */
-    height: 32px; /* Задайте нужный размер значка */
-    margin-right: 0px; /* Отступ справа от значка */
-    margin-left: 15px; /* Отступ справа от значка */
-  }
-  
+       .copyright {
+        color: white; /* Цвет текста */
+        }
+        .brand-icon {
+      width: 125px; /* Задайте нужный размер значка */
+      height: 125px; /* Задайте нужный размер значка */
+      margin-right: 32px; /* Отступ справа от значка */
+      margin-left: 32px; /* Отступ справа от значка */
+    }
+    .brand-icon1 {
+      width: 32px; /* Задайте нужный размер значка */
+      height: 32px; /* Задайте нужный размер значка */
+      margin-right: 0px; /* Отступ справа от значка */
+      margin-left: 15px; /* Отступ справа от значка */
+    }
+  .search-button1 {
+          width: 30px; /* Размер кнопки поиска */
+          height: 30px; /* Размер кнопки поиска */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #ccc; /* Граница кнопки */
+          border-radius: 4px; /* Радиус границы кнопки */
+          background-color: #f8f9fa; /* Цвет фона кнопки */
+          cursor: pointer;
+        }
+        .search-button1 img {
+          width: 20px; /* Задайте нужный размер значка */
+          height: 20px; /* Задайте нужный размер значка */
+        }
       body {
         padding-top: 85px; /* Отступ сверху, равный высоте header */
       }
@@ -149,15 +246,91 @@ if (isset($_POST['query'])) {
         font-size: 0.6em; 
       }
       .sticky-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: white; /* Убедитесь, что фон совпадает с цветом заголовка */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для визуального отделения */
-    display: none; /* Изначально скрыта */
-}
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: white; /* Убедитесь, что фон совпадает с цветом заголовка */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для визуального отделения */
+        display: none; /* Изначально скрыта */
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px; /* Подходящий отступ вокруг текста */
+        font-size: 16px; /* Размер шрифта */
+        border: 1px solid #ccc; /* Подходящий цвет рамки */
+        border-radius: 4px; /* Скругление углов (если нужно) */
+        box-sizing: border-box; /* Учет внутреннего отступа и рамки в общей ширине */
+    }
 
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        input[type="text"] {
+            font-size: 14px; /* Пример настройки для маленьких экранов */
+        }
+    }
+    input[type="text"] {
+            padding: 10px 20px; /* Отступы слева и справа для текста внутри поля */
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            width: 300px; /* Ширина поля ввода */
+            background-image: url('лупа.png'); /* Изображение лупы как фон */
+            background-size: 20px; /* Размер изображения лупы */
+            background-position: right 10px center; /* Положение лупы справа */
+            background-repeat: no-repeat; /* Запрет на повтор изображения */
+        }
+
+        input[type="text"]:focus {
+            border-color: #0f5e9c; /* Цвет рамки при фокусе */
+        }
+        .search-results {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap; /* Разрешает перенос элементов на новую строку */
+        }
+
+        .result {
+            width: calc(33.33% - 20px); /* Ширина блока, минус отступы между элементами */
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-sizing: border-box; /* Учитывает padding и border в расчете ширины */
+        }
+
+        .no-results {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 8px;
+            width: 100%; /* Чтобы занимал всю ширину родительского контейнера */
+        }
+        .result-content {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .result h4 a {
+              text-decoration: none; 
+              color:black;
+          }
+          .result h4 a:hover {
+              color: blue; /* Новый цвет при наведении курсора */
+          }
     </style>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -223,7 +396,7 @@ if (isset($_POST['query'])) {
                 <button class="search-button" type="button" id="search-button">
                   <img src="лупа.png" alt="Icon" class="brand-search">
                 </button>
-                <form action="search.php" method="post">
+                <form action="search.php" method="post" >
                   <input type="text" class="form-control" id="search-input" placeholder="Поиск..." name="query">
                 </form>
               </div>
@@ -232,7 +405,7 @@ if (isset($_POST['query'])) {
         </nav>
     </header>
     <header class="sticky-header">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-xxl">
             <button
               class="navbar-toggler"
@@ -279,30 +452,42 @@ if (isset($_POST['query'])) {
                 <button class="search-button" type="button" id="search-button">
                   <img src="лупа.png" alt="Icon" class="brand-search">
                 </button>
-                <form action="search.php" method="post">
+                <form action="search.php" method="post" >
                   <input type="text" class="form-control" id="search-input" placeholder="Поиск..." name="query">
                 </form>
               </div>
             </div>
           </div>
         </nav>
-</header>
-<section>
-<h1>Результаты поиска</h1>
+    </header>
+    <section>
     <?php if (isset($results)) : ?>
-        <?php if (empty($results)) : ?>
-            <p>По вашему запросу ничего не найдено.</p>
-        <?php else : ?>
-            <ul>
-                <?php foreach ($results as $page => $content) : ?>
-                    <li><a href="<?php echo $page; ?>"><?php echo $content; ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
+    <h3 style="font-size: 2.4em;">Результаты поиска:</h3>
+    <?php if (count($results) > 0) : ?>
+        <div class="search-results">
+            <?php foreach ($results as $page => $result) : ?>
+                <div class="result">
+                    <div class="result-content">
+                        <h4 style="font-size: 1.2em;"><a href="<?= $page ?>"><?= $result['title'] ?></a></h4>
+                        <p style="font-size: 0.9em;">Дата: <?= $result['date'] ?> / Автор: <?= $result['author'] ?></p>
+                        <p><?= $result['content'] ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php else : ?>
+        <div class="no-results">
+            <p style="font-size: 1em;">Извините, но по вашему запросу ничего не найдено. Пожалуйста, попробуйте ввести другие ключевые слова.</p>
+            <form method="post" action="">
+                <input type="text" style="width: 1000px;" name="query" placeholder="Введите поисковый запрос" value="<?= isset($query) ? htmlspecialchars($query) : '' ?>" />
+            </form>
+        </div>
     <?php endif; ?>
+<?php endif; ?>
+        
     </section>
-    <footer>
-      <p>&copy 2023-2024 by Arturchik and Ivan</p>
+    <footer style="background-color:black;">
+      <p class="copyright">&copy; 2023-2024 by Arturchik and Ivan</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script>
@@ -360,6 +545,7 @@ if (isset($_POST['query'])) {
         }
     });
 });
+
     </script>
   </body>
 </html>

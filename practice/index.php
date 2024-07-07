@@ -6,8 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>"Дора" — Проектирование высокоэффективных систем насосов</title>
     <link rel="icon" href="water_pump_icon_229881.ico">
-    <link rel="stylesheet" href="./header.css" !important;/>
+    <link rel="stylesheet" href="./header.css"/>
     <style>
+      .sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 60px; /* Уменьшаем высоту на 60px */
+    display: none;
+    padding-top: 0; /* Убираем отступ сверху */
+}
+
+     .copyright {
+    color: white; /* Цвет текста */
+}
       .brand-icon {
     width: 125px; /* Задайте нужный размер значка */
     height: 125px; /* Задайте нужный размер значка */
@@ -15,7 +30,7 @@
     margin-left: 32px; /* Отступ справа от значка */
   }
   .brand-icon1 {
-    width: 32px; /* Задайте нужный размер значка */
+    width: 46px; /* Задайте нужный размер значка */
     height: 32px; /* Задайте нужный размер значка */
     margin-right: 0px; /* Отступ справа от значка */
     margin-left: 15px; /* Отступ справа от значка */
@@ -130,7 +145,21 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для визуального отделения */
     display: none; /* Изначально скрыта */
 }
-
+.search-button1 {
+          width: 30px; /* Размер кнопки поиска */
+          height: 30px; /* Размер кнопки поиска */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #ccc; /* Граница кнопки */
+          border-radius: 4px; /* Радиус границы кнопки */
+          background-color: #f8f9fa; /* Цвет фона кнопки */
+          cursor: pointer;
+        }
+        .search-button1 img {
+          width: 20px; /* Задайте нужный размер значка */
+          height: 20px; /* Задайте нужный размер значка */
+        }
     </style>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -199,7 +228,6 @@
                 <form action="search.php" method="post">
                   <input type="text" class="form-control" id="search-input" placeholder="Поиск..." name="query">
                 </form>
-
               </div>
             </div>
           </div>
@@ -250,11 +278,11 @@
                 </li>
               </ul>
               <div class="search-container">
-                <button class="search-button" type="button" id="search-button">
+                <button class="search-button1" type="button" id="search-button-sticky">
                   <img src="лупа.png" alt="Icon" class="brand-search">
                 </button>
                 <form action="search.php" method="post">
-                  <input type="text" class="form-control" id="search-input" placeholder="Поиск..." name="query">
+                  <input type="text" class="form-control" id="search-input-sticky" placeholder="Поиск..." name="query">
                 </form>
               </div>
             </div>
@@ -336,8 +364,8 @@
         </div>
       </div>
     </section>
-    <footer>
-      <p>&copy 2023-2024 by Arturchik and Ivan</p>
+    <footer style="background-color:black;">
+      <p class="copyright">&copy; 2023-2024 by Arturchik and Ivan</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script>
