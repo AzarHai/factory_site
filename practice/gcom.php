@@ -1,20 +1,24 @@
 <?php
-$servername = "localhost";
+$servername = "practice";
 $username = "root";
 $password = ""; 
-$dbname = "register_bd"; 
+$dbname = "fulltext"; 
 
+// Подключение к базе данных
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Ошибка подключения: " . $conn->connect_error);
 }
-
 // Получение постов из базы данных с информацией об авторе и изображении
-$sql = "SELECT posts.id, posts.title, posts.content, posts.img, COALESCE(users.name, posts.name) AS user_name 
+$sql = "SELECT posts.id, posts.title, posts.content, posts.img, COALESCE(users.username, posts.name) AS user_name 
         FROM posts
         LEFT JOIN users ON posts.user_id = users.id
         ORDER BY posts.id DESC";
 $result = $conn->query($sql);
+if (!$result) {
+    die("Ошибка выполнения запроса: " . $conn->error);
+}
+
 
 if ($result->num_rows > 0) {
     // Создание и сохранение страниц для каждого поста

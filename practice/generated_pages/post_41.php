@@ -4,9 +4,8 @@
                             <meta charset='UTF-8' />
                             <meta http-equiv='X-UA-Compatible' content='IE=edge' />
                             <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-                            <title>fsdfdsf</title>
+                            <title>аыва</title>
                             <style>
-                            /* Вставьте ваш CSS стилизацию здесь */
                             body {
                                 margin: 0;
                                 padding: 0;
@@ -80,8 +79,8 @@
                   </div>
                 </nav>
               </header><article>
-                            <h1><b>fsdfdsf</b></h1><img src='D:\OSPanel\domains\practice\uploads/uploads/' alt='Изображение поста'><p>fsdfsd</p>
-                            <p>Автор: Артур</p>
+                            <h1><b>аыва</b></h1><img src='../uploads/1T4oqmot3kw.jpg' alt='Изображение поста'><p>аыва</p>
+                            <p>Автор: </p>
                           </article><footer>
                            
                           </footer></body>

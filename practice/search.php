@@ -351,6 +351,21 @@ if (isset($_POST['query'])) {
             <p2 class="tagline">Новейшие технологии</p2>
             <p3 class="contact-info1">Телефон: +7 (XXX) XXX-XX-XX</p3>
             <p4 class="contact-info2">Email: info@dora.com</p4>
+            <?php
+            if (!isset($_COOKIE['user'])) {
+                echo '<form class="d-flex" style="position: absolute; right: -80px; top: 10px;">';
+                echo '<button class="btn btn-primary me-2" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>';
+                echo '</form>';
+            } else {
+                echo '<div class="dropdown" style="position: absolute; right: -80px; top: 10px;">';
+                echo '<img src="https://cdn-icons-png.flaticon.com/512/6391/6391572.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">';
+                echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+                echo '<li><a class="dropdown-item" href="/exit.php">Выйти</a></li>';
+                echo '</ul>';
+                echo '</div>';
+            }
+            ?>
+        </div>
         </div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-xxl">
@@ -460,6 +475,24 @@ if (isset($_POST['query'])) {
           </div>
         </nav>
     </header>
+     <!-- Модальное окно для авторизации -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Авторизация</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="auth.php" method="post">
+          <input type="text" class="form-control mb-3" name="username" id="username" placeholder="Введите логин">
+          <input type="password" class="form-control mb-3" name="password" id="password" placeholder="Введите пароль">
+          <button class="btn btn-success">Войти</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
     <section>
     <?php if (isset($results)) : ?>
     <h3 style="font-size: 2.4em;">Результаты поиска:</h3>
@@ -545,7 +578,29 @@ if (isset($_POST['query'])) {
         }
     });
 });
+function showDropdown() {
+        document.querySelector('.dropdown-menu').style.display = 'block';
+    }
 
+    function hideDropdown() {
+        document.querySelector('.dropdown-menu').style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+        dropdownItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                // Удаляем класс 'active' у всех пунктов
+                dropdownItems.forEach(function(el) {
+                    el.classList.remove('active');
+                });
+
+                // Добавляем класс 'active' только к выбранному пункту
+                this.classList.add('active');
+            });
+        });
+    });
     </script>
   </body>
 </html>

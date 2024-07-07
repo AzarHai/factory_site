@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,6 +161,30 @@
           width: 20px; /* Задайте нужный размер значка */
           height: 20px; /* Задайте нужный размер значка */
         }
+
+        /* Стили для модального окна */
+        .modal-content {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Плавный переход для кнопки Вход */
+        .login-btn {
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #007bff;
+        }
+        body.modal-open {
+            overflow-y: hidden;
+            padding-right: 0 !important;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
     </style>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -180,7 +205,22 @@
             <p2 class="tagline">Новейшие технологии</p2>
             <p3 class="contact-info1">Телефон: +7 (XXX) XXX-XX-XX</p3>
             <p4 class="contact-info2">Email: info@dora.com</p4>
+            <?php
+            if (!isset($_COOKIE['user'])) {
+                echo '<form class="d-flex" style="position: absolute; right: -80px; top: 10px;">';
+                echo '<button class="btn btn-primary me-2" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>';
+                echo '</form>';
+            } else {
+                echo '<div class="dropdown" style="position: absolute; right: -80px; top: 10px;">';
+                echo '<img src="https://cdn-icons-png.flaticon.com/512/6391/6391572.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">';
+                echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+                echo '<li><a class="dropdown-item" href="/exit.php">Выйти</a></li>';
+                echo '</ul>';
+                echo '</div>';
+            }
+            ?>
         </div>
+        
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-xxl">
             <button
@@ -234,62 +274,79 @@
         </nav>
     </header>
     <header class="sticky-header">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-xxl">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <a class="navbar-brand" href="/index.php">
-                  <img src="4070419.png" alt="Icon" class="brand-icon1">
-                </a>
-                <li class="nav-item">
-                  <a class="nav-link" href="index.php">Главная</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="company.php">О компании</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="about.php">О нас</a></li>
-                    <li><a class="dropdown-item" href="contact.php">Контакты</a></li>
-                    <li><a class="dropdown-item" href="vacance.php">Вакансии</a></li>
-                    <li><a class="dropdown-item" href="postavka.php">Поставка</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="map.php">Карта сайта</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="news.php">Новости</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="catalog.php">Каталог насосов</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.php">Контакты</a>
-                </li>
-              </ul>
-              <div class="search-container">
-                <button class="search-button1" type="button" id="search-button-sticky">
-                  <img src="лупа.png" alt="Icon" class="brand-search">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+              <div class="container-xxl">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
                 </button>
-                <form action="search.php" method="post">
-                  <input type="text" class="form-control" id="search-input-sticky" placeholder="Поиск..." name="query">
-                </form>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <a class="navbar-brand" href="/index.php">
+                      <img src="4070419.png" alt="Icon" class="brand-icon1">
+                    </a>
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.php">Главная</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="company.php">О компании</a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="about.php">О нас</a></li>
+                        <li><a class="dropdown-item" href="contact.php">Контакты</a></li>
+                        <li><a class="dropdown-item" href="vacance.php">Вакансии</a></li>
+                        <li><a class="dropdown-item" href="postavka.php">Поставка</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="map.php">Карта сайта</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="news.php">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="catalog.php">Каталог насосов</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contact.php">Контакты</a>
+                    </li>
+                  </ul>
+                  <div class="search-container">
+                    <button class="search-button1" type="button" id="search-button-sticky">
+                      <img src="лупа.png" alt="Icon" class="brand-search">
+                    </button>
+                    <form action="search.php" method="post">
+                      <input type="text" class="form-control" id="search-input-sticky" placeholder="Поиск..." name="query">
+                    </form>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </nav>
-</header>
-
+            </nav>
+    </header>
+    <!-- Модальное окно для авторизации -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Авторизация</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="auth.php" method="post">
+          <input type="text" class="form-control mb-3" name="username" id="username" placeholder="Введите логин">
+          <input type="password" class="form-control mb-3" name="password" id="password" placeholder="Введите пароль">
+          <button class="btn btn-success">Войти</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
     <section>
       <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <ol class="carousel-indicators">
@@ -367,6 +424,7 @@
     <footer style="background-color:black;">
       <p class="copyright">&copy; 2023-2024 by Arturchik and Ivan</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzF2QvHbPOuFmK5pglI1xM6sV+UNK8vcvF0F05JEv45k" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -423,7 +481,30 @@
         }
     });
 });
+function showDropdown() {
+        document.querySelector('.dropdown-menu').style.display = 'block';
+    }
 
+    function hideDropdown() {
+        document.querySelector('.dropdown-menu').style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+        dropdownItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                // Удаляем класс 'active' у всех пунктов
+                dropdownItems.forEach(function(el) {
+                    el.classList.remove('active');
+                });
+
+                // Добавляем класс 'active' только к выбранному пункту
+                this.classList.add('active');
+            });
+        });
+    });
+    
     </script>
   </body>
 </html>
