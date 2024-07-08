@@ -29,15 +29,19 @@ if ($result->num_rows > 0) {
         echo '<h2>' . htmlspecialchars($row["title"]) . '</h2>';
         echo '<p>Автор: ' . htmlspecialchars($row["user_name"]) . '</p>';
         echo '</a>';
-        echo '</div>';
         ob_start();
         include './temlate.php';
         $html_content = ob_get_clean();
 
         $file_name = "post_" . $row["id"] . ".php";
         $file_path = "generated_pages/" . $file_name;
-
         file_put_contents($file_path, $html_content);
+        // Добавление кнопки для удаления
+        echo '<form action="delete_post.php" method="post" style="margin-top: 10px;">';
+        echo '<input type="hidden" name="post_id" value="' . $row["id"] . '">';
+        echo '<button type="submit" class="btn btn-danger btn-sm">Удалить</button>';
+        echo '</form>';
+        echo '</div>';
     }
     echo '</div>'; // Закрытие обертки
 } else {

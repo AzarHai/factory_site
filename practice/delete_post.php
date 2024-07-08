@@ -18,7 +18,6 @@ if (isset($_POST['post_id'])) {
     $sql = "DELETE FROM posts WHERE id = $post_id";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Пост успешно удален";
     } else {
         echo "Ошибка при удалении поста: " . $conn->error;
     }
