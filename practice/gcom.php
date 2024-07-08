@@ -9,6 +9,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Ошибка подключения: " . $conn->connect_error);
 }
+
 // Получение постов из базы данных с информацией об авторе и изображении
 $sql = "SELECT posts.id, posts.title, posts.content, posts.img, COALESCE(users.username, posts.name) AS user_name 
         FROM posts
@@ -18,128 +19,27 @@ $result = $conn->query($sql);
 if (!$result) {
     die("Ошибка выполнения запроса: " . $conn->error);
 }
-
-
 if ($result->num_rows > 0) {
+    echo '<div class="post-links-container">'; // Обертка для блоков ссылок
     // Создание и сохранение страниц для каждого поста
     while($row = $result->fetch_assoc()) {
-        $html_content = "<!DOCTYPE html>
-                        <html lang='en'>
-                        <head>
-                            <meta charset='UTF-8' />
-                            <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-                            <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-                            <title>{$row["title"]}</title>
-                            <style>
-                            body {
-                                margin: 0;
-                                padding: 0;
-                            }
-
-                            article {
-                                padding: 50px;
-                                padding-left: 190px;
-                                padding-right: 190px;
-                            }
-
-                            header, footer {
-                                padding: 0;
-                                margin: 0;
-                            }
-
-                            article img {
-                                max-width: 100%;
-                            }
-
-                            article p {
-                                font-size: 20px;
-                            }
-
-                            article h1 {
-                                font-size: 24px;
-                            }
-                        </style>
-                        <link
-                        href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css'
-                        rel='stylesheet'
-                        integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD'
-                        crossorigin='anonymous'
-                        />
-                        <link rel='stylesheet' href='../style.css' />
-                    </head>
-                    <body>";
-
-        $html_content .= "<header>
-                    <nav class=\"navbar navbar-expand-lg bg-body-tertiary\">
-                      <div class=\"container-xxl\">
-                        <a class=\"navbar-brand\" href=\"../index.php\">GordonRamsayLoves</a>
-                        <button
-                          class=\"navbar-toggler\"
-                          type=\"button\"
-                          data-bs-toggle=\"collapse\"
-                          data-bs-target=\"#navbarSupportedContent\"
-                          aria-controls=\"navbarSupportedContent\"
-                          aria-expanded=\"false\"
-                          aria-label=\"Toggle navigation\"
-                        >
-                          <span class=\"navbar-toggler-icon\"></span>
-                        </button>
-                        <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-                          <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
-                            <li class=\"nav-item show\">
-                              <a class=\"nav-link\" href=\"../recipe.php\">Рецепты</a>
-                            </li>
-                            <li class=\"nav-item\">
-                              <a class=\"nav-link\" href=\"../yourrecipe.php\">Ваши посты о еде</a>
-                            </li>
-                            <li class=\"nav-item\">
-                              <a class=\"nav-link\" href=\"../lol.php\">Наш ресторан</a>
-                            </li>
-                          </ul>";
-
-        if(!isset($_COOKIE['user'])) {
-            $html_content .= "<form class=\"d-flex\">
-                        <button class=\"btn btn-primary me-2\" type=\"button\" data-bs-toggle=\"modal\" data-bs-target=\"#loginModal\">Войти</button>
-                      </form>";
-        } else {
-            $html_content .= "<div class=\"dropdown\" style=\"position: relative;\">
-                      <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute; top: 100%;\">
-                        <li><a class=\"dropdown-item\" href=\"/exit.php\">Выйти</a></li>
-                      </ul>
-                    </div>
-                    <div class=\"dropdown\" onmouseover=\"showDropdown()\" onmouseout=\"hideDropdown()\" style=\"margin-top: 10px;\">
-                      <img src=\"https://cdn-icons-png.flaticon.com/512/6391/6391572.png\" alt=\"Изображение\" style=\"border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;\">
-                    </div>";
-        }
-        $html_content .= "     </div>
-                  </div>
-                </nav>
-              </header>";
-
-        $html_content .= "<article>
-                            <h1><b>{$row["title"]}</b></h1>";
-
-        if ($row["img"]) {
-            $html_content .= "<img src='../{$row["img"]}' alt='Изображение поста'>";
-        }
-
-        $html_content .= "<p>{$row["content"]}</p>
-                            <p>Автор: {$row["user_name"]}</p>
-                          </article>";
-
-        $html_content .= "<footer>
-                           
-                          </footer>";
-
-        $html_content .= "</body>
-                        </html>";
+        // Генерация содержимого страницы
+        echo '<div class="post-link">';
+        echo '<a href="generated_pages/post_' . $row["id"] . '.php" style="text-decoration: none;">'; // Добавление стиля
+        echo '<h2>' . htmlspecialchars($row["title"]) . '</h2>';
+        echo '<p>Автор: ' . htmlspecialchars($row["user_name"]) . '</p>';
+        echo '</a>';
+        echo '</div>';
+        ob_start();
+        include './temlate.php';
+        $html_content = ob_get_clean();
 
         $file_name = "post_" . $row["id"] . ".php";
         $file_path = "generated_pages/" . $file_name;
 
         file_put_contents($file_path, $html_content);
-        echo "<a href='$file_path'>Пост: {$row["title"]}</a><br>";
     }
+    echo '</div>'; // Закрытие обертки
 } else {
     echo "Нет постов для создания страниц";
 }

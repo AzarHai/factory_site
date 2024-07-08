@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>"Дора" — Проектирование высокоэффективных систем насосов</title>
+    <title>"Дора" — Новости</title>
     <link rel="icon" href="water_pump_icon_229881.ico">
     <link rel="stylesheet" href="./header.css"/>
     <style>
@@ -184,6 +184,32 @@
         .dropdown:hover .dropdown-menu {
             display: block;
         }
+/* Стили для контейнера блоков ссылок */
+.post-links-container {
+    display: flex; /* Отображение дочерних элементов в ряд */
+    flex-wrap: wrap; /* Обертывание на новую строку при необходимости */
+    gap: 20px; /* Расстояние между блоками */
+}
+
+/* Стили для каждого блока ссылки */
+.post-link {
+    background-color: #f0f0f0; /* Цвет фона */
+    padding: 20px; /* Внутренние отступы */
+    border-radius: 10px; /* Закругление углов */
+    flex: 1 0 300px; /* Определяет размер блока с минимальной шириной 300px */
+    max-width: 300px; /* Максимальная ширина блока */
+}
+
+.post-link h2 {
+    font-size: 1.5em; /* Размер заголовка */
+    margin-bottom: 10px; /* Расстояние между заголовком и текстом */
+}
+
+.post-link p {
+    color: black; /* Цвет текста */
+    
+}
+
     </style>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -328,19 +354,18 @@
               </div>
             </nav>
     </header>
-    <!-- Модальное окно для авторизации -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+   <!-- Модальное окно для авторизации -->
+   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <a href="#" class="forget me-3" data-bs-toggle="modal" data-bs-target="#registerModal">Регистрация?</a>
         <h5 class="modal-title" id="loginModalLabel">Авторизация</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form action="auth.php" method="post">
-          <input type="text" class="form-control mb-3" name="login" id="login" placeholder="Введите логин">
-          <input type="password" class="form-control mb-3" name="pass" id="pass" placeholder="Введите пароль">
+          <input type="text" class="form-control mb-3" name="username" id="username" placeholder="Введите логин">
+          <input type="password" class="form-control mb-3" name="password" id="password" placeholder="Введите пароль">
           <button class="btn btn-success">Войти</button>
         </form>
       </div>
@@ -351,6 +376,9 @@
     <div class="container-xxl">
     <h1>Ваши посты</h1>
                   <form id="post-form" method="post" onsubmit="return validateForm()">
+      <?php if (!isset($_COOKIE['user'])): ?>
+          
+      <?php else: ?>
                       <div class="form-group">
                           <label for="title">Заголовок:</label>
                           <input type="text" class="form-control" id="title" name="title">
@@ -368,6 +396,7 @@
                       <!-- Использование класса btn-block для кнопки, чтобы она занимала всю доступную ширину -->
                       
                   </form>
+                  <?php endif; ?>
                   <!-- Контейнер для отображения списка созданных страниц с постами -->
               <div id="post-links" class="mt-3">
                   <!-- Здесь будут отображаться ссылки на страницы с постами -->

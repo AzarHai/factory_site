@@ -1,108 +1,3 @@
-<?php
-if (isset($_POST['query'])) {
-    $query = htmlspecialchars($_POST['query']); // Получаем поисковый запрос и защищаемся от XSS
-    $pages = [
-        'index.php' => [
-            'title' => 'Главная',
-            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                          <p class="lead">Наша компания работает с 1996 года. Основными клиентами являются приборостроительные заводы, заводы точного машиностроения,предприятия авиационно-космической техники, центры стандартизации и метрологии, научно-исследовательские институты и учреждения высшего образования.
-            Мы поставляем и внедряем измерительный инструмент и системы лучших мировых производителей.
-            Наши инженеры по оборудованию решают сложнейшие измерительные задачи и обучают заказчиков.
-            Наша сервисная служба обеспечивает постоянную техническую поддержку всего поставляемого оборудования.
-            Наш коммерческий отдел всегда заботится о наших заказчиках.
-            Все это позволяет нам быть одним из крупнейших поставщиков измерительной техники в РФ и странах СНГ.</p>',
-            'date' => '2023-01-01',
-            'author' => 'Администратор'
-        ],
-        'company.php' => [
-            'title' => 'Информация о компании, история, миссия и ценности.',
-            'content' => '<p>Описание компании...</p>',
-            'date' => '2023-01-01',
-            'author' => 'Администратор'
-        ],
-        'about.php' => [
-              'title' => 'Подробнее о нас и нашей команде.',
-              'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                            <p class="lead">Наша компания работает с 1996 года...',
-                'date' => '2023-01-01',
-              'author' => 'Администратор'
-        ],
-        'contact.php' => [
-              'title' => 'Контактная информация для связи с нами.',
-              'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                            <p class="lead">Наша компания работает с 1996 года...',
-              'date' => '2023-01-01',
-              'author' => 'Администратор'
-        ],
-        'vacance.php' => [
-            'title' => 'Актуальные вакансии и возможности для трудоустройства.',
-            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                          <p class="lead">Наша компания работает с 1996 года...',
-            'date' => '2023-01-01',
-            'author' => 'Администратор'
-        ],
-        'postavka.php' => [
-            'title' => 'Информация о поставках и партнёрах.',
-            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                          <p class="lead">Наша компания работает с 1996 года...',
-            'date' => '2023-01-01',
-            'author' => 'Администратор'
-        ],
-        'map.php' => [
-            'title' => 'Карта сайта для быстрого навигации.',
-            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                          <p class="lead">Наша компания работает с 1996 года...',
-            'date' => '2023-01-01',
-            'author' => 'Администратор'],
-        'news.php' => [
-            'title' => 'Последние новости и события компании.',
-            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                          <p class="lead">Наша компания работает с 1996 года...',
-            'date' => '2023-01-01',
-            'author' => 'Администратор'],
-        'catalog.php' => [
-            'title' => 'Каталог насосов и оборудования, которые мы предлагаем.',
-            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                          <p class="lead">Наша компания работает с 1996 года...',
-            'date' => '2023-01-01',
-            'author' => 'Администратор']
-     ];
-
-     $results = [];
-
-     // Максимально допустимое расстояние Левенштейна для поиска похожих слов
-     $max_distance = 2;
- 
-     // Ищем совпадения, игнорируя регистр
-     foreach ($pages as $page => $data) {
-         $title = $data['title'];
-         $content = strip_tags($data['content']); // Удаляем HTML-теги из содержимого
- 
-         // Если есть точное совпадение в заголовке или содержимом
-         if (stripos($title, $query) !== false || stripos($content, $query) !== false) {
-             $results[$page] = [
-                 'title' => $title,
-                 'date' => $data['date'],
-                 'author' => $data['author']
-             ];
-         } else {
-             // Разбиваем заголовок и содержимое на слова и проверяем каждое слово
-             $words = array_merge(explode(' ', $title), explode(' ', $content));
-             foreach ($words as $word) {
-                 // Если расстояние Левенштейна между словом и запросом меньше или равно допустимому, добавляем результат
-                 if (levenshtein(mb_strtolower($word), mb_strtolower($query)) <= $max_distance) {
-                     $results[$page] = [
-                         'title' => $title,
-                         'date' => $data['date'],
-                         'author' => $data['author']
-                     ];
-                     break; // Достаточно одного совпадения, чтобы добавить страницу в результаты
-                 }
-             }
-         }
-     }
- }
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,9 +6,9 @@ if (isset($_POST['query'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>"Дора" — Поиск</title>
     <link rel="icon" href="water_pump_icon_229881.ico">
-    <link rel="stylesheet" href="./header.css" !important;/>
+    <link rel="stylesheet" href="/header.css" !important;/>
     <style>
-      header {
+        header {
     background-color: #f8f9fa; /* Цвет фона */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px 0; /* Отступы сверху и снизу */
@@ -239,7 +134,7 @@ if (isset($_POST['query'])) {
         margin: 0 auto 10px; /* Отступы: сверху 0, снизу 50px, авто для центрирования по горизонтали */
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding-top: 95px; /* Отступ сверху, равный высоте header */
+        padding-top: 135px; /* Отступ сверху, равный высоте header */
       }
       .preserve-whitespace {
         white-space: pre-wrap; /* Сохраняем пробелы и переносы строк */
@@ -370,7 +265,7 @@ if (isset($_POST['query'])) {
             border-radius: 5px;
             outline: none;
             width: 300px; /* Ширина поля ввода */
-            background-image: url('лупа.png'); /* Изображение лупы как фон */
+            background-image: url('D:\OSPanel\domains\practice\лупа.png'); /* Изображение лупы как фон */
             background-size: 20px; /* Размер изображения лупы */
             background-position: right 10px center; /* Положение лупы справа */
             background-repeat: no-repeat; /* Запрет на повтор изображения */
@@ -396,7 +291,6 @@ if (isset($_POST['query'])) {
             border-radius: 5px;
             background-color: #fff;
             box-sizing: border-box; /* Учитывает padding и border в расчете ширины */
-            
         }
 
         .no-results {
@@ -433,75 +327,43 @@ if (isset($_POST['query'])) {
     <header>
         <div class="brand-header">
             <a class="navbar-brand" href="/index.php">
-              <img src="4070419.png" alt="Icon" class="brand-icon">
+              <img src="/4070419.png" alt="Icon" class="brand-icon">
             </a>
-            <p1 class="company-name"style="font-size: 1.5em;color: #0f3e8c;" >ЗАО Производственная фирма «Дора» </p1>
+            <p1 class="company-name" style="font-size: 1.5em; color: #0f3e8c;">ЗАО Производственная фирма «Дора» </p1>
             <p2 class="tagline">Новейшие технологии</p2>
             <p3 class="contact-info1">Телефон: +7 (XXX) XXX-XX-XX</p3>
             <p4 class="contact-info2">Email: info@dora.com</p4>
-            <?php
-            if (!isset($_COOKIE['user'])) {
-                echo '<form class="d-flex" style="position: absolute; right: -80px; top: 10px;">';
-                echo '<button class="btn btn-primary me-2" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>';
-                echo '</form>';
-            } else {
-                echo '<div class="dropdown" style="position: absolute; right: -80px; top: 10px;">';
-                echo '<img src="https://cdn-icons-png.flaticon.com/512/6391/6391572.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">';
-                echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
-                echo '<li><a class="dropdown-item" href="/exit.php">Выйти</a></li>';
-                echo '</ul>';
-                echo '</div>';
-            }
-            ?>
-        </div>
-        </div>
+                            <div class="dropdown" style="position: absolute; right: -80px; top: 10px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6391/6391572.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="/exit.php">Выйти</a></li>
+                    </ul>
+                </div>
+                    </div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-xxl">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.php">Главная</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="company.php">О компании</a>
+                <li class="nav-item"><a class="nav-link" href="/index.php">Главная</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/company.php">О компании</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="about.php">О нас</a></li>
-                    <li><a class="dropdown-item" href="contact.php">Контакты</a></li>
-                    <li><a class="dropdown-item" href="vacance.php">Вакансии</a></li>
-                    <li><a class="dropdown-item" href="postavka.php">Поставка</a></li>
+                    <li><a class="dropdown-item" href="/about.php">О нас</a></li>
+                    <li><a class="dropdown-item" href="/contact.php">Контакты</a></li>
+                    <li><a class="dropdown-item" href="/vacance.php">Вакансии</a></li>
+                    <li><a class="dropdown-item" href="/postavka.php">Поставка</a></li>
                   </ul>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="map.php">Карта сайта</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="news.php">Новости</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="catalog.php">Каталог насосов</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.php">Контакты</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="/map.php">Карта сайта</a></li>
+                <li class="nav-item"><a class="nav-link" href="/news.php">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="/catalog.php">Каталог насосов</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact.php">Контакты</a></li>
               </ul>
               <div class="search-container">
-                <button class="search-button" type="button" id="search-button">
-                  <img src="лупа.png" alt="Icon" class="brand-search">
-                </button>
-                <form action="search.php" method="post" >
-                  <input type="text" class="form-control" id="search-input" placeholder="Поиск..." name="query">
-                </form>
+                <button class="search-button" type="button" id="search-button"><img src="/лупа.png" alt="Icon" class="brand-search"></button>
+                <form action="/search.php" method="post"><input type="text" class="form-control" id="search-input" placeholder="Поиск..." name="query"></form>
               </div>
             </div>
           </div>
@@ -510,54 +372,29 @@ if (isset($_POST['query'])) {
     <header class="sticky-header">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-xxl">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <a class="navbar-brand" href="/index.php">
-                  <img src="4070419.png" alt="Icon" class="brand-icon1">
-                </a>
-                <li class="nav-item">
-                  <a class="nav-link" href="index.php">Главная</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="company.php">О компании</a>
+                <a class="navbar-brand" href="/index.php"><img src="/4070419.png" alt="Icon" class="brand-icon1"></a>
+                <li class="nav-item"><a class="nav-link" href="/index.php">Главная</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/company.php">О компании</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="about.php">О нас</a></li>
-                    <li><a class="dropdown-item" href="contact.php">Контакты</a></li>
-                    <li><a class="dropdown-item" href="vacance.php">Вакансии</a></li>
-                    <li><a class="dropdown-item" href="postavka.php">Поставка</a></li>
+                    <li><a class="dropdown-item" href="/about.php">О нас</a></li>
+                    <li><a class="dropdown-item" href="/contact.php">Контакты</a></li>
+                    <li><a class="dropdown-item" href="/vacance.php">Вакансии</a></li>
+                    <li><a class="dropdown-item" href="/postavka.php">Поставка</a></li>
                   </ul>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="map.php">Карта сайта</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="news.php">Новости</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="catalog.php">Каталог насосов</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.php">Контакты</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="/map.php">Карта сайта</a></li>
+                <li class="nav-item"><a class="nav-link" href="/news.php">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="/catalog.php">Каталог насосов</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact.php">Контакты</a></li>
               </ul>
               <div class="search-container">
-                <button class="search-button" type="button" id="search-button">
-                  <img src="лупа.png" alt="Icon" class="brand-search">
-                </button>
-                <form action="search.php" method="post" >
-                  <input type="text" class="form-control" id="search-input" placeholder="Поиск..." name="query">
-                </form>
+                <button class="search-button" type="button" id="search-button"><img src="/лупа.png" alt="Icon" class="brand-search"></button>
+                <form action="/search.php" method="post"><input type="text" class="form-control" id="search-input" placeholder="Поиск..." name="query"></form>
               </div>
             </div>
           </div>
@@ -572,7 +409,7 @@ if (isset($_POST['query'])) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="auth.php" method="post">
+        <form action="/auth.php" method="post">
           <input type="text" class="form-control mb-3" name="username" id="username" placeholder="Введите логин">
           <input type="password" class="form-control mb-3" name="password" id="password" placeholder="Введите пароль">
           <button class="btn btn-success">Войти</button>
@@ -581,37 +418,20 @@ if (isset($_POST['query'])) {
     </div>
   </div>
 </div>
-    <section>
-    <?php if (isset($results)) : ?>
-    <h3 style="font-size: 2.4em;">Результаты поиска:</h3>
-    <?php if (count($results) > 0) : ?>
-        <div class="search-results">
-            <?php foreach ($results as $page => $result) : ?>
-                <div class="result">
-                    <div class="result-content">
-                        <h4 style="font-size: 1.2em;"><a href="<?= $page ?>"><?= $result['title'] ?></a></h4>
-                        <p style="font-size: 0.9em;">Дата: <?= $result['date'] ?> / Автор: <?= $result['author'] ?></p>
-                        <p><?= $result['content'] ?></p>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    <?php else : ?>
-        <div class="no-results">
-            <p style="font-size: 1em;">Извините, но по вашему запросу ничего не найдено. Пожалуйста, попробуйте ввести другие ключевые слова.</p>
-            <form method="post" action="">
-                <input type="text1" style="width: 1000px;" name="query" placeholder="Введите поисковый запрос" value="<?= isset($query) ? htmlspecialchars($query) : '' ?>" />
-            </form>
-        </div>
-    <?php endif; ?>
-<?php endif; ?>
-        
-    </section>
+<section>
+            <article>
+                                        <img src='../uploads/1T4oqmot3kw.jpg' alt='Изображение поста' width="300" height="200">
+                                        <h1>мсмчм</h1>
+                    <p>счмсчм</p>
+                    <p>Автор: Admin</p>
+            </article>
+</section>
     <footer style="background-color:black;">
       <p class="copyright">&copy; 2023-2024 by Arturchik and Ivan</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzA8rQ0PzbgI4WhDVSoc7SC5LbLK78Gdf0xok5RASZX" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93q0I==2JvkxVi+o8gie3Ir+ljXE57pZRI4lQ8Q8gS5w2yFiN0iWmRY/++e0J8" crossorigin="anonymous"></script>
+  <script>
       document.addEventListener('DOMContentLoaded', function() {
         const searchButton = document.getElementById('search-button');
         const searchInput = document.getElementById('search-input');
