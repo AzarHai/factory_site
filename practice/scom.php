@@ -1,6 +1,6 @@
 <?php
 // Подключение к базе данных
-$servername = "localhost";
+$servername = "practice";
 $username = "root";
 $password = ""; 
 $dbname = "fulltext"; 

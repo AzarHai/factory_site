@@ -333,9 +333,12 @@
             <p2 class="tagline">Новейшие технологии</p2>
             <p3 class="contact-info1">Телефон: +7 (XXX) XXX-XX-XX</p3>
             <p4 class="contact-info2">Email: info@dora.com</p4>
-                            <form class="d-flex" style="position: absolute; right: -80px; top: 10px;">
-                    <button class="btn btn-primary me-2" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
-                </form>
+                            <div class="dropdown" style="position: absolute; right: -80px; top: 10px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6391/6391572.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="/exit.php">Выйти</a></li>
+                    </ul>
+                </div>
                     </div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-xxl">

@@ -374,7 +374,7 @@
 </div>
 <section>
     <div class="container-xxl">
-    <h1>Ваши посты</h1>
+    <h1>Наши новости</h1>
                   <form id="post-form" method="post" onsubmit="return validateForm()">
       <?php if (!isset($_COOKIE['user'])): ?>
           
