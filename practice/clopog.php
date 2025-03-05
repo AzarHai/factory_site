@@ -15,38 +15,39 @@
     z-index: 1000;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    height: 60px; /* Уменьшаем высоту на 60px */
+    height: 60px; 
     display: none;
-    padding-top: 0; /* Убираем отступ сверху */
+    padding-top: 0; 
 }
 
      .copyright {
-    color: white; /* Цвет текста */
+    color: white; 
 }
       .brand-icon {
-    width: 125px; /* Задайте нужный размер значка */
-    height: 125px; /* Задайте нужный размер значка */
-    margin-right: 32px; /* Отступ справа от значка */
-    margin-left: 32px; /* Отступ справа от значка */
+    width: 125px;
+    height: 125px; 
+    margin-right: 32px; 
+    margin-left: 32px; 
   }
   .brand-icon1 {
-    width: 46px; /* Задайте нужный размер значка */
-    height: 32px; /* Задайте нужный размер значка */
-    margin-right: 0px; /* Отступ справа от значка */
-    margin-left: 15px; /* Отступ справа от значка */
+    width: 46px; 
+    height: 32px; 
+    margin-right: 0px; 
+    margin-left: 15px; 
   }
       body {
-        padding-top: 85px; /* Отступ сверху, равный высоте header */
+        padding-top: 85px; 
       }
       section {
         background-color: #ffffff;
         max-width: 1200px;
-        margin: 0 auto 10px; /* Отступы: сверху 0, снизу 50px, авто для центрирования по горизонтали */
+        margin: 0 auto 10px; 
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding-top: 95px; /* Отступ сверху, равный высоте header */}
+        padding-top: 95px; 
+      }
       .preserve-whitespace {
-        white-space: pre-wrap; /* Сохраняем пробелы и переносы строк */
+        white-space: pre-wrap;
       }
       .carousel-item {
         height: 32rem;
@@ -76,43 +77,43 @@
       }
       .link-container {
         width: 224px;
-        height: 114px; /* Автоматическая высота */
-        background-color: #898c8a; /* Серый цвет фона для области ссылок */
+        height: 114px; 
+        background-color: #898c8a; 
         display: block;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 20px;
         margin-bottom: 10px;
-        margin-right: 20px; /* Уменьшенный отступ справа */
-        margin-left: 200px; /* Сдвиг влево */
-        margin-top: -220px; /* Поднятие вверх */
+        margin-right: 20px; 
+        margin-left: 200px;
+        margin-top: -220px; 
       }
 
       .featurette-text {
-          margin-bottom: 10px; /* Отступ снизу между блоками */
+          margin-bottom: 10px; 
       }
 
       .featurette-text a {
-          display: block; /* Делаем ссылки блочными элементами */
-          padding: 5px; /* Внутренний отступ вокруг текста ссылки */
-          color: black; /* Цвет ссылок */
-          line-height: 0.55; /* Высота строки */
+          display: block; 
+          padding: 5px;
+          color: black; 
+          line-height: 0.55; 
       }
 
       .row.featurette {
         display: flex;
         align-items: center;
-        flex-wrap: wrap; /* Разрешаем перенос элементов */
-        margin-left: -250px; /* Сдвиг влево */
+        flex-wrap: wrap; 
+        margin-left: -250px; 
       }
       .col-md-7 {
         flex: 1;
-        min-width: 200px; /* Минимальная ширина для адаптивности */
+        min-width: 200px; 
       }
       .col-md-5 {
         flex: 0.5;
-        min-width: 200px; /* Минимальная ширина для адаптивности */
+        min-width: 200px; 
       }
       .brand-header .tagline {
         font-size: 0.8em; 
@@ -123,17 +124,17 @@
         
       }
       .brand-header .contact-info1 {
-        position: absolute; /* Абсолютное позиционирование */
-        left: 950px; /* Сдвиг влево */
-        top: 30%; /* Вертикальное выравнивание */
-        transform: translateY(-50%); /* Центрирование по вертикали */
+        position: absolute; 
+        left: 950px; 
+        top: 30%;
+        transform: translateY(-50%); 
         font-size: 0.6em; 
       }
       .brand-header .contact-info2 {
-        position: absolute; /* Абсолютное позиционирование */
-        left: 1000px; /* Сдвиг влево */
-        top: 15%; /* Вертикальное выравнивание */
-        transform: translateY(-50%); /* Центрирование по вертикали */
+        position: absolute;
+        left: 1000px; 
+        top: 15%; 
+        transform: translateY(-50%); 
         font-size: 0.6em; 
       }
       .sticky-header {
@@ -141,24 +142,24 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: white; /* Убедитесь, что фон совпадает с цветом заголовка */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для визуального отделения */
-    display: none; /* Изначально скрыта */
+    background-color: white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    display: none; 
 }
 .search-button1 {
-          width: 30px; /* Размер кнопки поиска */
-          height: 30px; /* Размер кнопки поиска */
+          width: 30px; 
+          height: 30px; 
           display: flex;
           align-items: center;
           justify-content: center;
-          border: 1px solid #ccc; /* Граница кнопки */
-          border-radius: 4px; /* Радиус границы кнопки */
-          background-color: #f8f9fa; /* Цвет фона кнопки */
+          border: 1px solid #ccc; 
+          border-radius: 4px; 
+          background-color: #f8f9fa; 
           cursor: pointer;
         }
         .search-button1 img {
-          width: 20px; /* Задайте нужный размер значка */
-          height: 20px; /* Задайте нужный размер значка */
+          width: 20px; 
+          height: 20px;
         }
 
         /* Стили для модального окна */
@@ -184,74 +185,70 @@
         .dropdown:hover .dropdown-menu {
             display: block;
         }
-/* Стили для контейнера блоков ссылок */
-.post-links-container {
-    display: block; /* Размещаем дочерние элементы по вертикали */
-    gap: 20px; /* Расстояние между блоками */
-}
+        /* Стили для контейнера блоков ссылок */
+        .post-links-container {
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+            justify-content: center; 
+        }
 
-/* Стили для каждого блока ссылки */
-.post-link {
-    background-color: #f0f0f0; /* Цвет фона */
-    padding: 20px; /* Внутренние отступы */
-    border-radius: 10px; /* Закругление углов */
-    margin-bottom: 20px; /* Расстояние между блоками */
-    display: flex; /* Для размещения элементов внутри блока в ряд */
-    align-items: center; /* Вертикальное выравнивание */
-}
+        /* Стили для каждого блока ссылки */
+        .post-link {
+            background-color: #f0f0f0; 
+            padding: 20px; 
+            border-radius: 10px; 
+            flex: 1 0 300px; 
+            max-width: 300px; 
+        }
 
-.post-link img {
-    margin-right: 20px; /* Расстояние между картинкой и текстом */
-    width: 150px; /* Ширина изображения */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
-}
+        .post-link h2 {
+            font-size: 1.5em; 
+            margin-bottom: 10px; 
+        }
 
-.post-link h2 {
-    font-size: 1.5em; /* Размер заголовка */
-    margin-bottom: 10px; /* Расстояние между заголовком и текстом */
-    color: black; /* Цвет текста кнопки */
-}
+        .post-link p {
+            color: black; 
+            
+        }
+        .post-link {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 0 300px;
+            max-width: 300px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
 
-.post-link p {
-    color: black; /* Цвет текста */
-}
-.post-link .details-button {
-    color: black; /* Цвет текста кнопки */
-    text-decoration: none; /* Удаление подчеркивания при наведении */
-}
-.navbar-nav .nav-item {
+        .post-link:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
+            transform: scale(1.05); 
+        }
+
+        .post-link img {
+            transition: transform 0.3s ease; 
+        }
+
+        .post-link:hover img {
+            transform: scale(1.2); 
+        }
+        .more-content {
+                    display: none;
+        }
+        .read-more-button, .read-less-button {
+            color: blue;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        .read-more-button {
+            display: inline;
+        }
+        .read-less-button {
+            display: none;
+        }
+        .navbar-nav .nav-item {
         margin-right: 30px;
       }
-      .footer-container {
-            display: flex;
-            justify-content: space-around;
-            color: white;
-        }
-
-        .footer-column {
-            flex: 1;
-            padding: 0 20px;
-        }
-
-        .footer-column p {
-            margin: 5px 0;
-        }
-        footer {
-            background-color: black;
-            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
-            padding:0;
-            text-align: center;
-            position: relative
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 1200px;
-            width: 100%;
-            z-index: 1000;
-            border-top: 1px solid #ccc;
-            margin-top: auto; /* Позволяет футеру находиться внизу страницы */
-            margin-bottom: 0; /* Убедитесь, что у футера нет нижнего отступа */
-        }
     </style>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -315,6 +312,9 @@
                   </ul>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="map.php">Карта сайта</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="news.php">Новости</a>
                 </li>
                 <li class="nav-item">
@@ -367,6 +367,9 @@
                       </ul>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" href="map.php">Карта сайта</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" href="news.php">Новости</a>
                     </li>
                     <li class="nav-item">
@@ -406,9 +409,9 @@
     </div>
   </div>
 </div>
-<section style="margin-bottom: 0;">
+<section>
     <div class="container-xxl">
-    <h1>Наши новости</h1>
+    <h1>Каталог насосов</h1>
                   <form id="post-form" method="post" onsubmit="return validateForm() && submitComment()">
       <?php if (!isset($_COOKIE['user'])): ?>
           
@@ -419,18 +422,125 @@
                       </div>
                       <div class="form-group mt-3">
                           <label for="content">Содержание:</label>
-                          <textarea class="form-control" id="content" name="content" style="resize: none;height:300px;"></textarea>
+                          <textarea class="form-control" id="content" name="content" style="resize: none;"></textarea>
                           <!-- Добавление стиля для отключения изменения размера текстового поля -->
                       </div>
                       <div class="form-group mt-3">
                       <label for="image">Изображение:</label>
                       <input type="file" class="form-control" id="image" name="image">
                       </div>
+                      <div class="form-group mt-3">
+                          <label for="image1">Превьюшка:</label>
+                          <input type="file" class="form-control" id="image1" name="image1">
+                      </div>
+                      <div class="form-group mt-3">
+                    <label for="category">Категория насоса по отрасли:</label>
+                    <select class="form-control" id="category" name="category">
+                        <option value="Производство удобрений">Производство удобрений</option>
+                        <option value="Строительные компании">Строительные компании</option>
+                        <option value="Химические заводы">Химические заводы</option>
+                        <option value="Фармацевтические компании">Фармацевтические компании</option>
+                        <option value="ГОК/Металлургия">ГОК/Металлургия</option>
+                        <option value="Производство бытовой техники/косметики">Производство бытовой техники/косметики</option>
+                        <option value="ЦБК/Бумажные комбинаты">ЦБК/Бумажные комбинаты</option>
+                    </select>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="category">Категория насоса по стране:</label>
+                    <select class="form-control" id="category1" name="category1">
+                          <option value="all">Все</option>
+                          <option value="Китай">Китай</option>
+                          <option value="Индия">Индия</option>
+                          <option value="Италия">Италия</option>
+                          <option value="Россия">Россия</option>
+                          <option value="Германия">Германия</option>
+                      </select>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="category">Категория насоса по конструкции:</label>
+                    <select class="form-control" id="category2" name="category2">
+                          <option value="all">Все</option>
+                          <option value="Вихревые насосы">Вихревые насосы</option>
+                          <option value="Дренажные насосы">Дренажные насосы</option>
+                          <option value="Ламинарные насосы">Ламинарные насосы</option>
+                          <option value="Объемные насосы">Объемные насосы</option>
+                          <option value="Скваженные насосы">Скваженные насосы</option>
+                          <option value="Насосы для вакуум-выпарных установок">Насосы для вакуум-выпарных установок</option>
+                          <option value="Пневмоприводные мембранные насосы">Пневмоприводные мембранные насосы</option>
+                          <option value="Центробежные консольные насосы">Центробежные консольные насосы</option>
+                          <option value="Циркуляционные «ин-лайн» насосы">Циркуляционные «ин-лайн» насосы</option>
+                      </select>
+                </div>
                       <button type="submit" class="btn btn-primary btn-block mt-3">Добавить пост</button>
                       <!-- Использование класса btn-block для кнопки, чтобы она занимала всю доступную ширину -->
-                      
                   </form>
                   <?php endif; ?>
+                  <p>
+        Оборудование применяется для перекачки нейтральных, агрессивных и взрывоопасных жидкостей — нефти, растворителей (ацетон, толуол), щелочи, кислоты малой и высокой химической активности (азотная кислота, серная кислота, фосфорная кислота и др.). Температура жидкостей может быть высокой, поэтому комплектующие насоса должны обладать повышенной прочностью и стойкостью к воздействию температур.
+    </p>
+    <span class="more-content">
+        <p>
+            По типу оборудования насосы подразделяются на следующие категории:
+            <ul>
+                <li>ламинарные насосы ОНЛ - допускают транспортировку среды с содержанием твердых компонентов до 40...50 мм при их концентрации до 45%;</li>
+                <li>центробежные моноблочные химические насосы ХМ — размер твердых включений не должен превышать 0,2 мм при максимальной их концентрации 0,1 мм;</li>
+                <li>самовсасывающие моноблочные центробежные насосы ХМс и вихревые ВКс  — откачивание из емкостей сверху, высота самовсасывания до 8 метров;</li>
+                <li>погружные пневмоприводные Хаски - герметичные самовсасывающие.</li>
+            </ul>
+        </p>
+        <p>
+            Технико-эксплуатационные особенности химически стойких насосов:
+            <ul>
+                <li>применяется нержавеющая сталь марок К, Е, устойчивых к воздействию химических веществ;</li>
+                <li>схема и тип торцового уплотнения подбирается с учетом требований безопасности согласно требованиям производства;</li>
+                <li>надежные торцовые уплотнения фирмы Джон Крейн. Материал пар трения, уплотнительных элементов выбирается в соответствии с перекачиваемой жидкостью и условий эксплуатации;</li>
+                <li>использование взрывозащищенных электродвигателей надежных электрозаводов, и материалов, исключающих искрообразование;</li>
+                <li>камера обогрева горячей водой или паром, электрообогрев.</li>
+            </ul>
+        </p>
+    </span>
+    </p>
+    <span class="read-more-button">Читать далее</span>
+    <span class="read-less-button" style="display:none;">Свернуть</span>
+    <div class="form-group mt-3">
+        <label for="categoryFilter">Фильтр по категории:</label>
+        <select class="form-control" id="categoryFilter" name="categoryFilter" onchange="filterPosts()">
+            <option value="all">Все</option>
+            <option value="Производство удобрений">Производство удобрений</option>
+            <option value="Строительные компании">Строительные компании</option>
+            <option value="Химические заводы">Химические заводы</option>
+            <option value="Фармацевтические компании">Фармацевтические компании</option>
+            <option value="ГОК/Металлургия">ГОК/Металлургия</option>
+            <option value="Производство бытовой техники/косметики">Производство бытовой техники/косметики</option>
+            <option value="ЦБК/Бумажные комбинаты">ЦБК/Бумажные комбинаты</option>
+        </select>
+    </div>
+    <div class="form-group mt-3">
+        <label for="categoryFilter">Фильтр по стране:</label>
+        <select class="form-control" id="categoryFilter" name="categoryFilter" onchange="filterPosts()">
+            <option value="all">Все</option>
+            <option value="Китай">Китай</option>
+            <option value="Индия">Индия</option>
+            <option value="Италия">италия</option>
+            <option value="Россия">Россия</option>
+            <option value="Германия">Германия</option>
+        </select>
+    </div>
+    <div class="form-group mt-3">
+        <label for="categoryFilter">Фильтр по конструкции:</label>
+        <select class="form-control" id="categoryFilter" name="categoryFilter" onchange="filterPosts()">
+        <option value="all">Все</option>
+                          <option value="Вихревые насосы">Вихревые насосы</option>
+                          <option value="Дренажные насосы">Дренажные насосы</option>
+                          <option value="Ламинарные насосы">Ламинарные насосы</option>
+                          <option value="Объемные насосы">Объемные насосы</option>
+                          <option value="Скваженные насосы">Скваженные насосы</option>
+                          <option value="Насосы для вакуум-выпарных установок">Насосы для вакуум-выпарных установок</option>
+                          <option value="Пневмоприводные мембранные насосы">Пневмоприводные мембранные насосы</option>
+                          <option value="Центробежные консольные насосы">Центробежные консольные насосы</option>
+                          <option value="Циркуляционные «ин-лайн» насосы">Циркуляционные «ин-лайн» насосы</option>
+        </select>
+    </div>
                   <!-- Контейнер для отображения списка созданных страниц с постами -->
               <div id="post-links" class="mt-3">
                   <!-- Здесь будут отображаться ссылки на страницы с постами -->
@@ -439,45 +549,54 @@
   </section>
 
 
-  <footer style="background-color:black;position: relative;margin-top: 0;">
-<div class="footer-container">
-<div class="footer-column">
+  <footer style="background-color:black;">
+      <div>
+            <p class="copyright">&copy; 2023-2024 by Arturchik</p>
+        </div>
+      <div>
             <p style="color:white;">Адрес:</p>
             <p style="color:white;">198095, Россия, г. Санкт-Петербург,<br>
                ул. Трамвайный пр., д. 6, Лит. А</p>
         </div>
-        <div class="footer-column">
+        <div>
             <p style="color:white;">Телефон:</p>
             <p style="color:white;">+7 (XXX) XXX-XX-XX</p>
         </div>
-        <div class="footer-column">
+        <div>
             <p style="color:white;">Email:</p>
             <p style="color:white;">info@dora.com</p>
         </div>
-        </div>
     </footer>
-    
 <script>
-  // Функция для проверки формы перед отправкой
-function validateForm() {
-    var title = document.getElementById('title').value.trim();
-    var content = document.getElementById('content').value.trim();
-    var imageInput = document.getElementById('image');
+function filterPosts() {
+    const selectedCategory = document.getElementById('categoryFilter').value;
+    const postLinks = document.querySelectorAll('#post-links .post-link');
 
-    if (title === '' || content === '') {
-        alert('Пожалуйста, заполните заголовок и содержание поста');
-        return false; // Отмена отправки формы, если поля не заполнены
-    }
-
-    // Проверка наличия выбранного изображения
-    if (imageInput.files.length === 0) {
-        alert('Пожалуйста, выберите изображение для загрузки');
-        return false; // Отмена отправки формы, если изображение не выбрано
-    }
-
-    return true; // Продолжение отправки формы, если все проверки пройдены успешно
+    postLinks.forEach(post => {
+        const postCategory = post.getAttribute('data-category');
+        if (selectedCategory === 'all' || postCategory === selectedCategory) {
+            post.style.display = 'block';
+        } else {
+            post.style.display = 'none';
+        }
+    });
 }
 
+  const moreContent = document.querySelector('.more-content');
+        const readMoreButton = document.querySelector('.read-more-button');
+        const readLessButton = document.querySelector('.read-less-button');
+
+        readMoreButton.addEventListener('click', () => {
+            moreContent.style.display = 'inline';
+            readMoreButton.style.display = 'none';
+            readLessButton.style.display = 'inline';
+        });
+
+        readLessButton.addEventListener('click', () => {
+            moreContent.style.display = 'none';
+            readMoreButton.style.display = 'inline';
+            readLessButton.style.display = 'none';
+        });
   // Функция для проверки куки и скрытия формы
   function checkCookieAndHideForm() {
     if (!document.cookie.includes('user')) {
@@ -488,10 +607,11 @@ function validateForm() {
 
   // Функция для отображения комментариев из базы данных
   function showPostLinks() {
-        fetch('gcom.php') // Предполагается, что у вас есть скрипт для получения ссылок на страницы с постами
+        fetch('gnasos.php') // Предполагается, что у вас есть скрипт для получения ссылок на страницы с постами
             .then(response => response.text())
             .then(data => {
                 document.getElementById('post-links').innerHTML = data;
+                filterPosts();
             })
             .catch(error => {
                 console.error('Ошибка:', error);
@@ -506,7 +626,7 @@ window.onload = function () {
   // Функция для отправки нового комментария
   function submitComment() {
     let formData = new FormData(document.getElementById('post-form'));
-    fetch('scom.php', {
+    fetch('snasos.php', {
         method: 'POST',
         body: formData
       })
@@ -543,6 +663,26 @@ window.onload = function () {
             });
         });
     });
+    function validateForm() {
+    var title = document.getElementById('title').value.trim();
+    var content = document.getElementById('content').value.trim();
+    var imageInput = document.getElementById('image');
+    var imageInput1 = document.getElementById('image1');
+
+    if (title === '' || content === '') {
+        alert('Пожалуйста, заполните заголовок и содержание поста');
+        return false; // Отмена отправки формы, если поля не заполнены
+    }
+
+    // Проверка наличия выбранного изображения
+    if (imageInput.files.length === 0 || imageInput1.files.length === 0) {
+        alert('Пожалуйста, выберите хотя бы одно изображение для загрузки');
+        return false; // Отмена отправки формы, если изображение не выбрано
+    }
+
+    return true; // Продолжение отправки формы, если все проверки пройдены успешно
+}
+
     document.addEventListener('DOMContentLoaded', function() {
         const searchButton = document.getElementById('search-button');
         const searchInput = document.getElementById('search-input');

@@ -5,139 +5,214 @@ if (isset($_POST['query'])) {
         'index.php' => [
             'title' => 'Главная',
             'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                          <p class="lead">Наша компания работает с 1996 года. Основными клиентами являются приборостроительные заводы, заводы точного машиностроения,предприятия авиационно-космической техники, центры стандартизации и метрологии, научно-исследовательские институты и учреждения высшего образования.
+                          <p class="lead">Наша компания работает с 1996 года. Основными клиентами являются химические заводы, заводы фармоцевтические,предприятия бытовой техники, бумажные комбинаты, металлургические и строительные предприятия.
             Мы поставляем и внедряем измерительный инструмент и системы лучших мировых производителей.
             Наши инженеры по оборудованию решают сложнейшие измерительные задачи и обучают заказчиков.
             Наша сервисная служба обеспечивает постоянную техническую поддержку всего поставляемого оборудования.
             Наш коммерческий отдел всегда заботится о наших заказчиках.
             Все это позволяет нам быть одним из крупнейших поставщиков измерительной техники в РФ и странах СНГ.</p>',
-            'date' => '2023-01-01',
             'author' => 'Администратор'
         ],
         'company.php' => [
             'title' => 'Информация о компании, история, миссия и ценности.',
             'content' => '<p>Описание компании...</p>',
-            'date' => '2023-01-01',
             'author' => 'Администратор'
         ],
         'about.php' => [
-              'title' => 'Подробнее о нас и нашей команде.',
-              'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                            <p class="lead">Наша компания работает с 1996 года...',
-                'date' => '2023-01-01',
+              'title' => 'Консультации',
+              'content' => '<h2>Консультации</h2>
+        <ul>
+            <li>Рекомендации по применению насосов для различных условий эксплуатации и перекачиваемых жидкостей</li>
+            <li>Консультации по подбору, применению и замене насосного оборудования и торцовых уплотнений</li>
+            <li>Консультации по замене импортных насосов на отечественные</li>
+            <li>Подбор торцовых уплотнений фирмы "Джон Крейн" (Англия) для отечественных насосов и аппаратов</li>
+            <li>Справочная служба "Где купить насос?", телефон 8-800-600-35-45</li>
+        </ul>',
               'author' => 'Администратор'
         ],
         'contact.php' => [
               'title' => 'Контактная информация для связи с нами.',
-              'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                            <p class="lead">Наша компания работает с 1996 года...',
-              'date' => '2023-01-01',
+              'content' => '<h2 style="font-size: 24px;">Контактная информация</h2>
+                <p>Адрес:</p>
+                <p>198095, Россия, г. Санкт-Петербург,</p>
+                <p>ул. Трамвайный пр., д. 6, Лит. А</p>
+                <p>ст. метро Ленинский проспект</p>
+                <p>Телефон:</p>
+                <p>+7 (XXX) XXX-XX-XX</p>
+                <p>Email:</p>
+                <p>info@dora.com</p>
+                <p>service@dora.ru</p>',
               'author' => 'Администратор'
         ],
         'vacance.php' => [
             'title' => 'Актуальные вакансии и возможности для трудоустройства.',
-            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                          <p class="lead">Наша компания работает с 1996 года...',
-            'date' => '2023-01-01',
+            'content' => '<p><strong>1. Секретарь для работы в офисе</strong></p>
+        <ul>
+            <li>Опыт работы по профессии – несколько лет</li>
+            <li>Знание делопроизводства</li>
+            <li> Интерес к профессии</li>
+            <li>Работа с компьютером (MS-Office, e-mail)</li>
+            <li>Контактность, желание работать в коллективе</li>
+            <li>Без вредных привычек</li>
+        </ul>
+        <p><strong>2. Специалист по лопастным и объемным насосам</strong></p>
+        <ul>
+            <li>Опыт работы по профессии – несколько лет</li>
+            <li>Знание особенностей конструкции насосов</li>
+            <li>Технические расчеты</li>
+            <li>Интерес к профессии</li>
+            <li>Контактность, желание работать в коллективе</li>
+            <li>Опыт публикаций в печати и выступлений по техническим вопросам</li>
+            <li> Без вредных привычек</li>
+        </ul>
+        <p><strong>3. Специалист по торцовым уплотнениям валов насосов</strong></p>
+        <ul>
+            <li>Опыт работы с насосами – несколько лет</li>
+            <li>Английский язык – технический (желательно – разговорный)</li>
+            <li>Интерес к профессии</li>
+            <li>Контактность, желание работать в коллективе</li>
+            <li>Опыт публикаций в печати и выступлений по техническим вопросам</li>
+            <li>Без вредных привычек</li>
+        </ul>
+        <p><strong>4. Менеджер по продажам насосного оборудования</strong></p>
+        <ul>
+            <li>Опыт работы с насосами – несколько лет</li>
+            <li>Знание номенклатуры насосов</li>
+            <li>Интерес к профессии</li>
+            <li>Контактность, желание работать в коллективе</li>
+            <li>Работа с компьютером (MS-Office, e-mail)</li>
+            <li> Без вредных привычек</li>
+        </ul>
+        <p><strong>5. Менеджер по продажам торцовых уплотнений валов</strong></p>
+        <ul>
+            <li>Знание номенклатуры уплотнений</li>
+            <li>Интерес к профессии</li>
+            <li>Контактность, желание работать в коллективе</li>
+            <li>Работа с компьютером (MS-Office, e-mail)</li>
+            <li>Без вредных привычек</li>
+        </ul>',
             'author' => 'Администратор'
         ],
         'postavka.php' => [
             'title' => 'Информация о поставках и партнёрах.',
             'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
                           <p class="lead">Наша компания работает с 1996 года...',
-            'date' => '2023-01-01',
             'author' => 'Администратор'
         ],
-        'map.php' => [
-            'title' => 'Карта сайта для быстрого навигации.',
-            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                          <p class="lead">Наша компания работает с 1996 года...',
-            'date' => '2023-01-01',
-            'author' => 'Администратор'],
         'news.php' => [
             'title' => 'Последние новости и события компании.',
             'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
                           <p class="lead">Наша компания работает с 1996 года...',
-            'date' => '2023-01-01',
             'author' => 'Администратор'],
         'catalog.php' => [
             'title' => 'Каталог насосов и оборудования, которые мы предлагаем.',
-            'content' => '<h2 class="featurette-heading">Гарантии качества</h2>
-                          <p class="lead">Наша компания работает с 1996 года...',
-            'date' => '2023-01-01',
+            'content' => 'Оборудование применяется для перекачки нейтральных, агрессивных и взрывоопасных жидкостей — нефти, растворителей (ацетон, толуол), щелочи, кислоты малой и высокой химической активности (азотная кислота, серная кислота, фосфорная кислота и др.). Температура жидкостей может быть высокой, поэтому комплектующие насоса должны обладать повышенной прочностью и стойкостью к воздействию температур.
+            По типу оборудования насосы подразделяются на следующие категории:
+            ламинарные насосы ОНЛ - допускают транспортировку среды с содержанием твердых компонентов до 40...50 мм при их концентрации до 45%;
+            центробежные моноблочные химические насосы ХМ — размер твердых включений не должен превышать 0,2 мм при максимальной их концентрации 0,1 мм;
+            самовсасывающие моноблочные центробежные насосы ХМс и вихревые ВКс  — откачивание из емкостей сверху, высота самовсасывания до 8 метров;
+            погружные пневмоприводные Хаски - герметичные самовсасывающие.
+            Технико-эксплуатационные особенности химически стойких насосов:
+            применяется нержавеющая сталь марок К, Е, устойчивых к воздействию химических веществ;
+            схема и тип торцового уплотнения подбирается с учетом требований безопасности согласно требованиям производства;
+            надежные торцовые уплотнения фирмы Джон Крейн. Материал пар трения, уплотнительных элементов выбирается в соответствии с перекачиваемой жидкостью и условий эксплуатации;
+            использование взрывозащищенных электродвигателей надежных электрозаводов, и материалов, исключающих искрообразование;
+            камера обогрева горячей водой или паром, электрообогрев.',
             'author' => 'Администратор']
      ];
 
      $results = [];
 
-     // Максимально допустимое расстояние Левенштейна для поиска похожих слов
-     $max_distance = 2;
- 
-     // Ищем совпадения, игнорируя регистр
-     foreach ($pages as $page => $data) {
-         $title = $data['title'];
-         $content = strip_tags($data['content']); // Удаляем HTML-теги из содержимого
- 
-         // Если есть точное совпадение в заголовке или содержимом
-         if (stripos($title, $query) !== false || stripos($content, $query) !== false) {
-             $results[$page] = [
-                 'title' => $title,
-                 'date' => $data['date'],
-                 'author' => $data['author']
-             ];
-         } else {
-             // Разбиваем заголовок и содержимое на слова и проверяем каждое слово
-             $words = array_merge(explode(' ', $title), explode(' ', $content));
-             foreach ($words as $word) {
-                 // Если расстояние Левенштейна между словом и запросом меньше или равно допустимому, добавляем результат
-                 if (levenshtein(mb_strtolower($word), mb_strtolower($query)) <= $max_distance) {
-                     $results[$page] = [
-                         'title' => $title,
-                         'date' => $data['date'],
-                         'author' => $data['author']
-                     ];
-                     break; // Достаточно одного совпадения, чтобы добавить страницу в результаты
-                 }
-             }
-         }
-     }
- 
-     // Подключение к базе данных
-     $servername = "practice";
-     $username = "root";
-     $password = "";
-     $dbname = "fulltext";
- 
-     $conn = new mysqli($servername, $username, $password, $dbname);
- 
-     if ($conn->connect_error) {
-         die("Connection failed: " . $conn->connect_error);
-     }
- 
-     // Поиск в базе данных
-     $sql = "SELECT id, title, content, name AS author FROM posts WHERE title LIKE ? OR content LIKE ?";
-     $stmt = $conn->prepare($sql);
- 
-     if (!$stmt) {
-         die("Error preparing statement: " . $conn->error);
-     }
- 
-     $likeQuery = '%' . $query . '%';
-     $stmt->bind_param("ss", $likeQuery, $likeQuery);
-     $stmt->execute();
-     $result = $stmt->get_result();
- 
-     while ($row = $result->fetch_assoc()) {
-      $results['generated_pages/post_' . $row['id'] . '.php'] = [
-        'title' => $row['title'],
-        'author' => $row['author']
-    ];
-  }
- 
-     $stmt->close();
-     $conn->close();
- }
- ?>
+    // Максимально допустимое расстояние Левенштейна для поиска похожих слов
+    $max_distance = 2;
+
+    // Ищем совпадения, игнорируя регистр
+    foreach ($pages as $page => $data) {
+        $title = $data['title'];
+        $content = strip_tags($data['content']); // Удаляем HTML-теги из содержимого
+
+        // Если есть точное совпадение в заголовке или содержимом
+        if (stripos($title, $query) !== false || stripos($content, $query) !== false) {
+            $results[$page] = [
+                'title' => $title,
+                'author' => $data['author']
+            ];
+        } else {
+            // Разбиваем заголовок и содержимое на слова и проверяем каждое слово
+            $words = array_merge(explode(' ', $title), explode(' ', $content));
+            foreach ($words as $word) {
+                // Если расстояние Левенштейна между словом и запросом меньше или равно допустимому, добавляем результат
+                if (levenshtein(mb_strtolower($word), mb_strtolower($query)) <= $max_distance) {
+                    $results[$page] = [
+                        'title' => $title,
+                        'author' => $data['author']
+                    ];
+                    break; // Достаточно одного совпадения, чтобы добавить страницу в результаты
+                }
+            }
+        }
+    }
+
+    // Подключение к базе данных
+    $servername = "practice";
+    $username = "root";
+    $password = "";
+    $dbname = "fulltext";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Поиск в базе данных в таблице posts
+    $sql = "SELECT id, title, content, name AS author FROM posts WHERE title LIKE ? OR content LIKE ?";
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        die("Error preparing statement: " . $conn->error);
+    }
+
+    $likeQuery = '%' . $query . '%';
+    $stmt->bind_param("ss", $likeQuery, $likeQuery);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    while ($row = $result->fetch_assoc()) {
+        $results['generated_pages/post_' . $row['id'] . '.php'] = [
+            'id' => $row['id'], // добавлено id
+            'title' => $row['title'],
+            'author' => $row['author'],
+            'content' => $row['content'] // добавлено content
+        ];
+    }
+
+    $stmt->close();
+
+    // Поиск в базе данных в таблице nasos
+    $sql = "SELECT id, title, content, name AS author FROM nasos WHERE title LIKE ? OR content LIKE ?";
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        die("Error preparing statement: " . $conn->error);
+    }
+
+    $stmt->bind_param("ss", $likeQuery, $likeQuery);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    while ($row = $result->fetch_assoc()) {
+        $results['product/post_' . $row['id'] . '.php'] = [
+            'id' => $row['id'], // добавлено id
+            'title' => $row['title'],
+            'author' => $row['author'],
+        ];
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -454,6 +529,23 @@ if (isset($_POST['query'])) {
           .result h4 a:hover {
               color: blue; /* Новый цвет при наведении курсора */
           }
+          .navbar-nav .nav-item {
+        margin-right: 30px;
+      }
+      .footer-container {
+            display: flex;
+            justify-content: space-around;
+            color: white;
+        }
+
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-column p {
+            margin: 5px 0;
+        }
     </style>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -481,7 +573,7 @@ if (isset($_POST['query'])) {
                 echo '</form>';
             } else {
                 echo '<div class="dropdown" style="position: absolute; right: -80px; top: 10px;">';
-                echo '<img src="https://cdn-icons-png.flaticon.com/512/6391/6391572.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">';
+                echo '<img src="зареган.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">';
                 echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
                 echo '<li><a class="dropdown-item" href="/exit.php">Выйти</a></li>';
                 echo '</ul>';
@@ -511,14 +603,10 @@ if (isset($_POST['query'])) {
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="company.php">О компании</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="about.php">О нас</a></li>
+                    <li><a class="dropdown-item" href="about.php">Консультация</a></li>
                     <li><a class="dropdown-item" href="contact.php">Контакты</a></li>
                     <li><a class="dropdown-item" href="vacance.php">Вакансии</a></li>
-                    <li><a class="dropdown-item" href="postavka.php">Поставка</a></li>
                   </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="map.php">Карта сайта</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="news.php">Новости</a>
@@ -527,7 +615,7 @@ if (isset($_POST['query'])) {
                   <a class="nav-link" href="catalog.php">Каталог насосов</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.php">Контакты</a>
+                  <a class="nav-link" href="/postavka.php">Поставка</a>
                 </li>
               </ul>
               <div class="search-container">
@@ -567,14 +655,10 @@ if (isset($_POST['query'])) {
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="company.php">О компании</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="about.php">О нас</a></li>
+                    <li><a class="dropdown-item" href="about.php">Консультация</a></li>
                     <li><a class="dropdown-item" href="contact.php">Контакты</a></li>
                     <li><a class="dropdown-item" href="vacance.php">Вакансии</a></li>
-                    <li><a class="dropdown-item" href="postavka.php">Поставка</a></li>
                   </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="map.php">Карта сайта</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="news.php">Новости</a>
@@ -583,7 +667,7 @@ if (isset($_POST['query'])) {
                   <a class="nav-link" href="catalog.php">Каталог насосов</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.php">Контакты</a>
+                  <a class="nav-link" href="/postavka.php">Поставка</a>
                 </li>
               </ul>
               <div class="search-container">
@@ -616,19 +700,29 @@ if (isset($_POST['query'])) {
     </div>
   </div>
 </div>
-    <section>
+    <section style="margin-bottom: 0;">
     <?php if (isset($results)) : ?>
     <h3 style="font-size: 2.4em;">Результаты поиска:</h3>
     <?php if (count($results) > 0) : ?>
         <div class="search-results">
-            <?php foreach ($results as $page => $result) : ?>
+            <?php 
+            $excluded_pages = ['index.php', 'company.php', 'about.php', 'contact.php', 'vacance.php', 'postavka.php', 'map.php', 'news.php', 'catalog.php'];
+            foreach ($results as $page => $result) : ?>
                 <div class="result">
                     <div class="result-content">
                         <h4 style="font-size: 1.2em;"><a href="<?= $page ?>"><?= $result['title'] ?></a></h4>
-                        <p style="font-size: 0.9em;">Дата: <?= $result['date'] ?> / Автор: <?= $result['author'] ?></p>
-                        <p><?= $result['content'] ?></p>
+                        <p style="font-size: 0.9em;">Автор: <?= $result['author'] ?></p>
+                        <?php if (!in_array(basename($page), $excluded_pages)) : ?>
+                            <form action="delete.php" method="post">
+                                <input type="hidden" name="id" value="<?= $result['id'] ?>">
+                                <button type="submit" class="btn btn-danger">Удалить</button>
+                            </form>
+                            <br></br>
+                            <br></br>
+                        <?php endif; ?>
                     </div>
                 </div>
+                
             <?php endforeach; ?>
         </div>
     <?php else : ?>
@@ -637,15 +731,39 @@ if (isset($_POST['query'])) {
             <form method="post" action="">
                 <input type="text1" style="width: 1000px;" name="query" placeholder="Введите поисковый запрос" value="<?= isset($query) ? htmlspecialchars($query) : '' ?>" />
             </form>
+            
         </div>
+        <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
     <?php endif; ?>
 <?php endif; ?>
-        
+
+
     </section>
-    <footer style="background-color:black;">
-      <p class="copyright">&copy; 2023-2024 by Arturchik and Ivan</p>
+    
+    <footer style="background-color:black;position: relative;margin-top: 0;">
+<div class="footer-container">
+<div class="footer-column">
+            <p style="color:white;">Адрес:</p>
+            <p style="color:white;">198095, Россия, г. Санкт-Петербург,<br>
+               ул. Трамвайный пр., д. 6, Лит. А</p>
+        </div>
+        <div class="footer-column">
+            <p style="color:white;">Телефон:</p>
+            <p style="color:white;">+7 (XXX) XXX-XX-XX</p>
+        </div>
+        <div class="footer-column">
+            <p style="color:white;">Email:</p>
+            <p style="color:white;">info@dora.com</p>
+        </div>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzA8rQ0PzbgI4WhDVSoc7SC5LbLK78Gdf0xok5RASZX" crossorigin="anonymous"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const searchButton = document.getElementById('search-button');

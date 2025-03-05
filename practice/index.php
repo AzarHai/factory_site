@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,38 +15,49 @@
     z-index: 1000;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    height: 60px; /* Уменьшаем высоту на 60px */
+    height: 60px; 
     display: none;
-    padding-top: 0; /* Убираем отступ сверху */
+    padding-top: 0; 
 }
 
      .copyright {
-    color: white; /* Цвет текста */
+    color: white; 
 }
       .brand-icon {
-    width: 125px; /* Задайте нужный размер значка */
-    height: 125px; /* Задайте нужный размер значка */
-    margin-right: 32px; /* Отступ справа от значка */
-    margin-left: 32px; /* Отступ справа от значка */
+    width: 125px; 
+    height: 125px; 
+    margin-right: 32px; 
+    margin-left: 32px; 
   }
   .brand-icon1 {
-    width: 46px; /* Задайте нужный размер значка */
-    height: 32px; /* Задайте нужный размер значка */
-    margin-right: 0px; /* Отступ справа от значка */
-    margin-left: 15px; /* Отступ справа от значка */
+    width: 46px; 
+    height: 32px; 
+    margin-right: 0px; 
+    margin-left: 15px; 
   }
       body {
-        padding-top: 85px; /* Отступ сверху, равный высоте header */
+        padding-top: 85px; 
       }
       section {
-        background-color: #ffffff;
-        max-width: 1200px;
-        margin: 0 auto 10px; /* Отступы: сверху 0, снизу 50px, авто для центрирования по горизонтали */
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: calc(100vh - 85px - 50px); /* высота экрана минус высота хедера и футера */
+}
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer div {
+    margin: 10px 0;
+  }
+}
       .preserve-whitespace {
-        white-space: pre-wrap; /* Сохраняем пробелы и переносы строк */
+        white-space: pre-wrap; 
       }
       .carousel-item {
         height: 32rem;
@@ -77,43 +87,43 @@
       }
       .link-container {
         width: 224px;
-        height: 114px; /* Автоматическая высота */
-        background-color: #898c8a; /* Серый цвет фона для области ссылок */
+        height: 114px; 
+        background-color: #898c8a; 
         display: block;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 20px;
         margin-bottom: 10px;
-        margin-right: 20px; /* Уменьшенный отступ справа */
-        margin-left: 200px; /* Сдвиг влево */
-        margin-top: -220px; /* Поднятие вверх */
+        margin-right: 20px; 
+        margin-left: 200px; 
+        margin-top: -220px; 
       }
 
       .featurette-text {
-          margin-bottom: 10px; /* Отступ снизу между блоками */
+          margin-bottom: 10px; 
       }
 
       .featurette-text a {
-          display: block; /* Делаем ссылки блочными элементами */
-          padding: 5px; /* Внутренний отступ вокруг текста ссылки */
-          color: black; /* Цвет ссылок */
-          line-height: 0.55; /* Высота строки */
+          display: block; 
+          padding: 5px; 
+          color: black; 
+          line-height: 0.55; 
       }
 
       .row.featurette {
         display: flex;
         align-items: center;
-        flex-wrap: wrap; /* Разрешаем перенос элементов */
-        margin-left: -250px; /* Сдвиг влево */
+        flex-wrap: wrap; 
+        margin-left: -250px; 
       }
       .col-md-7 {
         flex: 1;
-        min-width: 200px; /* Минимальная ширина для адаптивности */
+        min-width: 200px; 
       }
       .col-md-5 {
         flex: 0.5;
-        min-width: 200px; /* Минимальная ширина для адаптивности */
+        min-width: 200px; 
       }
       .brand-header .tagline {
         font-size: 0.8em; 
@@ -124,17 +134,17 @@
         
       }
       .brand-header .contact-info1 {
-        position: absolute; /* Абсолютное позиционирование */
-        left: 950px; /* Сдвиг влево */
-        top: 30%; /* Вертикальное выравнивание */
-        transform: translateY(-50%); /* Центрирование по вертикали */
+        position: absolute; 
+        left: 950px; 
+        top: 30%; 
+        transform: translateY(-50%); 
         font-size: 0.6em; 
       }
       .brand-header .contact-info2 {
-        position: absolute; /* Абсолютное позиционирование */
-        left: 1000px; /* Сдвиг влево */
-        top: 15%; /* Вертикальное выравнивание */
-        transform: translateY(-50%); /* Центрирование по вертикали */
+        position: absolute;
+        left: 1000px; 
+        top: 15%; 
+        transform: translateY(-50%); 
         font-size: 0.6em; 
       }
       .sticky-header {
@@ -142,24 +152,24 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: white; /* Убедитесь, что фон совпадает с цветом заголовка */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для визуального отделения */
-    display: none; /* Изначально скрыта */
+    background-color: white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    display: none;
 }
 .search-button1 {
-          width: 30px; /* Размер кнопки поиска */
-          height: 30px; /* Размер кнопки поиска */
+          width: 30px;
+          height: 30px; 
           display: flex;
           align-items: center;
           justify-content: center;
-          border: 1px solid #ccc; /* Граница кнопки */
-          border-radius: 4px; /* Радиус границы кнопки */
-          background-color: #f8f9fa; /* Цвет фона кнопки */
+          border: 1px solid #ccc; 
+          border-radius: 4px; 
+          background-color: #f8f9fa; 
           cursor: pointer;
         }
         .search-button1 img {
-          width: 20px; /* Задайте нужный размер значка */
-          height: 20px; /* Задайте нужный размер значка */
+          width: 20px; 
+          height: 20px; 
         }
 
         /* Стили для модального окна */
@@ -184,6 +194,70 @@
         }
         .dropdown:hover .dropdown-menu {
             display: block;
+        }
+        /* Стили для контейнера блоков ссылок */
+        .post-links-container {
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+            justify-content: center;
+            margin-top: 20px; 
+        }
+
+        /* Стили для каждого блока ссылки */
+        .post-link {
+            background-color: #f0f0f0; 
+            padding: 20px; 
+            border-radius: 10px; 
+            flex: 1 0 300px; 
+            max-width: 300px; 
+        }
+
+        .post-link h2 {
+            font-size: 1.5em; 
+            margin-bottom: 10px; 
+        }
+
+        .post-link p {
+            color: black; 
+            
+        }
+        .centered {
+                    text-align: center; 
+                    margin-top: 20px; 
+                }
+                .navbar-nav .nav-item {
+        margin-right: 30px;
+      }
+      .footer-container {
+            display: flex;
+            justify-content: space-around;
+            color: white;
+        }
+
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-column p {
+            margin: 5px 0;
+        }
+        footer {
+            background-color: black;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+            padding:0;
+            text-align: center;
+            position: relative
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 1200px;
+            width: 100%;
+            z-index: 1000;
+            border-top: 1px solid #ccc;
+            margin-top: auto; /* Позволяет футеру находиться внизу страницы */
+            margin-bottom: 0; /* Убедитесь, что у футера нет нижнего отступа */
         }
     </style>
     <link
@@ -212,7 +286,7 @@
                 echo '</form>';
             } else {
                 echo '<div class="dropdown" style="position: absolute; right: -80px; top: 10px;">';
-                echo '<img src="https://cdn-icons-png.flaticon.com/512/6391/6391572.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">';
+                echo '<img src="зареган.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">';
                 echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
                 echo '<li><a class="dropdown-item" href="/exit.php">Выйти</a></li>';
                 echo '</ul>';
@@ -220,7 +294,6 @@
             }
             ?>
         </div>
-        
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-xxl">
             <button
@@ -242,14 +315,10 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="company.php">О компании</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="about.php">О нас</a></li>
+                    <li><a class="dropdown-item" href="about.php">Консультация</a></li>
                     <li><a class="dropdown-item" href="contact.php">Контакты</a></li>
                     <li><a class="dropdown-item" href="vacance.php">Вакансии</a></li>
-                    <li><a class="dropdown-item" href="postavka.php">Поставка</a></li>
                   </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="map.php">Карта сайта</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="news.php">Новости</a>
@@ -258,7 +327,7 @@
                   <a class="nav-link" href="catalog.php">Каталог насосов</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.php">Контакты</a>
+                  <a class="nav-link" href="/postavka.php">Поставка</a>
                 </li>
               </ul>
               <div class="search-container">
@@ -298,14 +367,10 @@
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="company.php">О компании</a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="about.php">О нас</a></li>
+                        <li><a class="dropdown-item" href="about.php">Консультация</a></li>
                         <li><a class="dropdown-item" href="contact.php">Контакты</a></li>
                         <li><a class="dropdown-item" href="vacance.php">Вакансии</a></li>
-                        <li><a class="dropdown-item" href="postavka.php">Поставка</a></li>
                       </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="map.php">Карта сайта</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="news.php">Новости</a>
@@ -314,7 +379,7 @@
                       <a class="nav-link" href="catalog.php">Каталог насосов</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="contact.php">Контакты</a>
+                      <a class="nav-link" href="/postavka.php">Поставка</a>
                     </li>
                   </ul>
                   <div class="search-container">
@@ -347,36 +412,27 @@
     </div>
   </div>
 </div>
-    <section>
+    <section style="margin-bottom: 0;">
       <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <ol class="carousel-indicators">
           <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
           <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-          <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active" data-inteval="2000">
-            <div class="overlay-image"style="background-image:url(./slider-1.jpg);"></div>
+            <div class="overlay-image"style="background-image:url(./slide.jpeg);"></div>
             <div class="container">
-              <h1>Example</h1>
-              <p>Kodfkfo DLFfsdf,sldf, sdfkldsf flsdpdl</p>
-              <a href="" class="btn btn-lg btn-primary">Sign up today</a>
+              <h1 class="large-text"style="font-size: 4em;margin-left: 350px;">10 лет вместе!</h1>
+              <p style="font-size: 1.4em;margin-left: 350px;">-поставлено более 10 тысяч химеческих насосов</p>
+              <p style="font-size: 1.4em;margin-left: 350px;">-модернизировано свыше 250-ти насосов</p>
             </div>
           </div>
           <div class="carousel-item"data-inteval="1000">
             <div class="overlay-image"style="background-image:url(./slide-2.png);width:1000px;height=400px;"></div>
             <div class="container">
-              <h1>Example</h1>
-              <p>Kodfkfo DLFfsdf,sldf, sdfkldsf flsdpdl</p>
-              <a href="" class="btn btn-lg btn-primary">Sign up today</a>
-            </div>
-          </div>
-          <div class="carousel-item"data-inteval="500">
-            <div class="overlay-image"style="background-image:url(./slider-3.jpg);width:1200px;height=400px;"></div>
-            <div class="container">
-              <h1>Example</h1>
-              <p>Kodfkfo DLFfsdf,sldf, sdfkldsf flsdpdl</p>
-              <a href="" class="btn btn-lg btn-primary">Sign up today</a>
+              <h1>Calpeda NR</h1>
+              <p>Легкость в обслуживании и эксплуатации: Простая установка и минимальные требования к техническому обслуживанию.</p>
+              <a href="catalog.php" class="btn btn-lg btn-primary">Подробнее здесь</a>
             </div>
           </div>
         </div>
@@ -394,7 +450,7 @@
         <div class="col-md-7 order-md-2">
           <h2 class="featurette-heading">Гарантии качества </h2>
           <p class="lead">
-            Наша компания работает с 1996 года. Основными клиентами являются приборостроительные заводы, заводы точного машиностроения,предприятия авиационно-космической техники, центры стандартизации и метрологии, научно-исследовательские институты и учреждения высшего образования.
+          Наша компания работает с 1996 года. Основными клиентами являются химические заводы, заводы фармоцевтические,предприятия бытовой техники, бумажные комбинаты, металлургические и строительные предприятия.
 
             Мы поставляем и внедряем измерительный инструмент и системы лучших мировых производителей.
 
@@ -412,21 +468,42 @@
               <a href="https://www.youtube.com/">Мы на Ютуб</a>
             </div>
             <div class="featurette-text">
-              <a href="https://www.example.com/journal">Журнал НИТ</a>
+              <a href="https://irecommend.ru/">Отзывы о фирме</a>
             </div>
             <div class="featurette-text">
-              <a href="https://www.example.com/catalogs">Каталоги и брошюры</a>
+              <a href="/catalog.php">Каталог</a>
             </div>
           </div>
         </div>
       </div>
+      <div class="centered">
+        <h1>Последние новости</h1>
+    </div>
+      <div id="post-links" class="mt-3">
+                  <!-- Здесь будут отображаться ссылки на страницы с постами -->
+      </div>
     </section>
-    <footer style="background-color:black;">
-      <p class="copyright">&copy; 2023-2024 by Arturchik and Ivan</p>
+    <footer style="background-color:black;position: relative;margin-top: 0;">
+<div class="footer-container">
+<div class="footer-column">
+            <p style="color:white;">Адрес:</p>
+            <p style="color:white;">198095, Россия, г. Санкт-Петербург,<br>
+               ул. Трамвайный пр., д. 6, Лит. А</p>
+        </div>
+        <div class="footer-column">
+            <p style="color:white;">Телефон:</p>
+            <p style="color:white;">+7 (XXX) XXX-XX-XX</p>
+        </div>
+        <div class="footer-column">
+            <p style="color:white;">Email:</p>
+            <p style="color:white;">info@dora.com</p>
+        </div>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzF2QvHbPOuFmK5pglI1xM6sV+UNK8vcvF0F05JEv45k" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script>
+      
       document.addEventListener('DOMContentLoaded', function() {
         const searchButton = document.getElementById('search-button');
         const searchInput = document.getElementById('search-input');
@@ -494,17 +571,29 @@ function showDropdown() {
 
         dropdownItems.forEach(function(item) {
             item.addEventListener('click', function() {
-                // Удаляем класс 'active' у всех пунктов
+                
                 dropdownItems.forEach(function(el) {
                     el.classList.remove('active');
                 });
-
-                // Добавляем класс 'active' только к выбранному пункту
                 this.classList.add('active');
             });
         });
     });
-    
+     // Функция для отображения комментариев из базы данных
+  function showPostLinks() {
+        fetch('gcom1.php') 
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('post-links').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
+    }
+// Отображаем список страниц с постами при загрузке страницы
+window.onload = function () {
+        showPostLinks();
+    };
     </script>
   </body>
 </html>

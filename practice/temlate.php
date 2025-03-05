@@ -8,6 +8,9 @@
     <link rel="icon" href="water_pump_icon_229881.ico">
     <link rel="stylesheet" href="/header.css" !important;/>
     <style>
+      .navbar-nav .nav-item {
+        margin-right: 30px;
+      }
         header {
     background-color: #f8f9fa; /* Цвет фона */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -313,6 +316,26 @@
           .result h4 a:hover {
               color: blue; /* Новый цвет при наведении курсора */
           }
+          .center-content {
+            display: flex;
+            flex-direction: column; /* Расположение элементов по вертикали */
+            align-items: center; /* Центрирование по горизонтали */
+            text-align: center; /* Выравнивание текста по центру */
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            color: white;
+        }
+
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-column p {
+            margin: 5px 0;
+        }
     </style>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -339,7 +362,7 @@
                 </form>
             <?php else: ?>
                 <div class="dropdown" style="position: absolute; right: -80px; top: 10px;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/6391/6391572.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">
+                    <img src="/зареган.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <li><a class="dropdown-item" href="/exit.php">Выйти</a></li>
                     </ul>
@@ -356,16 +379,15 @@
                 <li class="nav-item"><a class="nav-link" href="/index.php">Главная</a></li>
                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/company.php">О компании</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/about.php">О нас</a></li>
+                    <li><a class="dropdown-item" href="/about.php">Консультация</a></li>
                     <li><a class="dropdown-item" href="/contact.php">Контакты</a></li>
                     <li><a class="dropdown-item" href="/vacance.php">Вакансии</a></li>
-                    <li><a class="dropdown-item" href="/postavka.php">Поставка</a></li>
+                    
                   </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="/map.php">Карта сайта</a></li>
                 <li class="nav-item"><a class="nav-link" href="/news.php">Новости</a></li>
                 <li class="nav-item"><a class="nav-link" href="/catalog.php">Каталог насосов</a></li>
-                <li class="nav-item"><a class="nav-link" href="/contact.php">Контакты</a></li>
+                <li class="nav-item"><a class="nav-link" href="/postavka.php">Поставка</a></li>
               </ul>
               <div class="search-container">
                 <button class="search-button" type="button" id="search-button"><img src="/лупа.png" alt="Icon" class="brand-search"></button>
@@ -378,29 +400,50 @@
     <header class="sticky-header">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-xxl">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <a class="navbar-brand" href="/index.php"><img src="/4070419.png" alt="Icon" class="brand-icon1"></a>
-                <li class="nav-item"><a class="nav-link" href="/index.php">Главная</a></li>
-                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/company.php">О компании</a>
+                <a class="navbar-brand" href="/index.php">
+                  <img src="/4070419.png" alt="Icon" class="brand-icon1">
+                </a>
+                <li class="nav-item">
+                  <a class="nav-link" href="/index.php">Главная</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="/company.php">О компании</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/about.php">О нас</a></li>
+                    <li><a class="dropdown-item" href="/about.php">Консультация</a></li>
                     <li><a class="dropdown-item" href="/contact.php">Контакты</a></li>
                     <li><a class="dropdown-item" href="/vacance.php">Вакансии</a></li>
-                    <li><a class="dropdown-item" href="/postavka.php">Поставка</a></li>
                   </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="/map.php">Карта сайта</a></li>
-                <li class="nav-item"><a class="nav-link" href="/news.php">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="/catalog.php">Каталог насосов</a></li>
-                <li class="nav-item"><a class="nav-link" href="/contact.php">Контакты</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/news.php">Новости</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/catalog.php">Каталог насосов</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/postavka.php">Поставка</a>
+                </li>
               </ul>
               <div class="search-container">
-                <button class="search-button" type="button" id="search-button"><img src="/лупа.png" alt="Icon" class="brand-search"></button>
-                <form action="/search.php" method="post"><input type="text" class="form-control" id="search-input" placeholder="Поиск..." name="query"></form>
+                <button class="search-button" type="button" id="search-button-sticky">
+                  <img src="/лупа.png" alt="Icon" class="brand-search">
+                </button>
+                <form action="/search.php" method="post" >
+                  <input type="text" class="form-control" id="search-input-sticky" placeholder="Поиск..." name="query">
+                </form>
               </div>
             </div>
           </div>
@@ -424,26 +467,53 @@
     </div>
   </div>
 </div>
-<section>
+<section style="margin-bottom: 0;">
             <article>
+            <div class="center-content">
                     <?php
                     $imagePath = 'D:/OSPanel/domains/practice/' . $row['img'];
                     if (file_exists($imagePath)): 
                     ?>
-                    <img src='../<?php echo htmlspecialchars($row["img"]); ?>' alt='Изображение поста' width="300" height="200">
+                    <img src='../<?php echo htmlspecialchars($row["img"]); ?>' alt='Изображение поста' width="700" height="400">
                     <?php else: ?>
                     <p>Изображение недоступно</p>
                     <?php endif; ?>
-                    <h1><?php echo htmlspecialchars($row['title']); ?></h1>
-                    <p><?php echo htmlspecialchars($row['content']); ?></p>
-                    <p>Автор: <?php echo htmlspecialchars($row['user_name']); ?></p>
+                    </div>
+                    <h1 class="center-content"><?php echo htmlspecialchars($row['title']); ?></h1>
+            </div>
+            <pre style="font-size: 1em;word-wrap: break-word;white-space: pre-wrap; "><?php echo $row['content']; ?></pre>
+            </div>
+            <br></br>
+            <?php
+if (isset($_COOKIE['user'])) {
+    echo '<p>Автор: ' . htmlspecialchars($row['user_name']) . '</p>';
+}
+?>
+            <br></br>
+            <br></br>
+            <br></br>
             </article>
 </section>
-    <footer style="background-color:black;">
-      <p class="copyright">&copy; 2023-2024 by Arturchik and Ivan</p>
+<footer style="background-color:black;position: relative;margin-top: 0;">
+<div class="footer-container">
+<div class="footer-column">
+            <p style="color:white;">Адрес:</p>
+            <p style="color:white;">198095, Россия, г. Санкт-Петербург,<br>
+               ул. Трамвайный пр., д. 6, Лит. А</p>
+        </div>
+        <div class="footer-column">
+            <p style="color:white;">Телефон:</p>
+            <p style="color:white;">+7 (XXX) XXX-XX-XX</p>
+        </div>
+        <div class="footer-column">
+            <p style="color:white;">Email:</p>
+            <p style="color:white;">info@dora.com</p>
+        </div>
+        </div>
     </footer>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzA8rQ0PzbgI4WhDVSoc7SC5LbLK78Gdf0xok5RASZX" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93q0I==2JvkxVi+o8gie3Ir+ljXE57pZRI4lQ8Q8gS5w2yFiN0iWmRY/++e0J8" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <script>
       document.addEventListener('DOMContentLoaded', function() {
         const searchButton = document.getElementById('search-button');

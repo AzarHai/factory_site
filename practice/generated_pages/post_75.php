@@ -134,7 +134,7 @@
         margin: 0 auto 10px; /* Отступы: сверху 0, снизу 50px, авто для центрирования по горизонтали */
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding-top: 75px; /* Отступ сверху, равный высоте header */
+        padding-top: 135px; /* Отступ сверху, равный высоте header */
       }
       .preserve-whitespace {
         white-space: pre-wrap; /* Сохраняем пробелы и переносы строк */
@@ -319,23 +319,6 @@
             align-items: center; /* Центрирование по горизонтали */
             text-align: center; /* Выравнивание текста по центру */
         }
-        .navbar-nav .nav-item {
-        margin-right: 30px;
-      }
-      .footer-container {
-            display: flex;
-            justify-content: space-around;
-            color: white;
-        }
-
-        .footer-column {
-            flex: 1;
-            padding: 0 20px;
-        }
-
-        .footer-column p {
-            margin: 5px 0;
-        }
     </style>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -356,19 +339,13 @@
             <p2 class="tagline">Новейшие технологии</p2>
             <p3 class="contact-info1">Телефон: +7 (XXX) XXX-XX-XX</p3>
             <p4 class="contact-info2">Email: info@dora.com</p4>
-            <?php if (!isset($_COOKIE['user'])): ?>
-                <form class="d-flex" style="position: absolute; right: -80px; top: 10px;">
-                    <button class="btn btn-primary me-2" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
-                </form>
-            <?php else: ?>
-                <div class="dropdown" style="position: absolute; right: -80px; top: 10px;">
+                            <div class="dropdown" style="position: absolute; right: -80px; top: 10px;">
                     <img src="/зареган.png" alt="Изображение" style="border-radius: 5%; width: 60px; height: 60px; border: 2px solid black; object-fit: cover; object-position: center;">
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <li><a class="dropdown-item" href="/exit.php">Выйти</a></li>
                     </ul>
                 </div>
-            <?php endif; ?>
-        </div>
+                    </div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-xxl">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -382,8 +359,10 @@
                     <li><a class="dropdown-item" href="/about.php">Консультация</a></li>
                     <li><a class="dropdown-item" href="/contact.php">Контакты</a></li>
                     <li><a class="dropdown-item" href="/vacance.php">Вакансии</a></li>
+                    
                   </ul>
                 </li>
+                <li class="nav-item"><a class="nav-link" href="/map.php">Карта сайта</a></li>
                 <li class="nav-item"><a class="nav-link" href="/news.php">Новости</a></li>
                 <li class="nav-item"><a class="nav-link" href="/catalog.php">Каталог насосов</a></li>
                 <li class="nav-item"><a class="nav-link" href="/postavka.php">Поставка</a></li>
@@ -413,6 +392,7 @@
                     <li><a class="dropdown-item" href="/vacance.php">Вакансии</a></li>
                   </ul>
                 </li>
+                <li class="nav-item"><a class="nav-link" href="/map.php">Карта сайта</a></li>
                 <li class="nav-item"><a class="nav-link" href="/news.php">Новости</a></li>
                 <li class="nav-item"><a class="nav-link" href="/catalog.php">Каталог насосов</a></li>
                 <li class="nav-item"><a class="nav-link" href="/postavka.php">Поставка</a></li>
@@ -426,7 +406,7 @@
         </nav>
     </header>
      <!-- Модальное окно для авторизации -->
-     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -434,7 +414,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="auth.php" method="post">
+        <form action="/auth.php" method="post">
           <input type="text" class="form-control mb-3" name="username" id="username" placeholder="Введите логин">
           <input type="password" class="form-control mb-3" name="password" id="password" placeholder="Введите пароль">
           <button class="btn btn-success">Войти</button>
@@ -443,75 +423,22 @@
     </div>
   </div>
 </div>
-<section style="margin-bottom: 0;">
-<hr class="featurette-divider">
-      <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-        <h1 style="margin-left: 130px;font-size: 24px;">Как найти нас</h1>
-    <div id="map" style="width: 600px; height: 400px;margin-left: 130px;"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzF2QvHbPOuFmK5pglI1xM6sV+UNK8vcvF0F05JEv45k" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script>
-        ymaps.ready(init);
-        function init() {
-            var myMap = new ymaps.Map('map', {
-                center: [59.989656, 30.209825], // координаты центра карты
-                zoom: 15 // уровень масштабирования
-            });
-
-            // Добавление маркера на карту
-            ymaps.geocode('Санкт-Петербург, Трамвайный пр., 6, 198207').then(function (res) {
-                var firstGeoObject = res.geoObjects.get(0);
-                myMap.geoObjects.add(new ymaps.Placemark(firstGeoObject.geometry.getCoordinates(), {
-                    balloonContent: 'Санкт-Петербург, Трамвайный пр., 6, 198207'
-                }, {
-                    preset: 'islands#icon',
-                    iconColor: '#0095b6'
-                }));
-                myMap.setCenter(firstGeoObject.geometry.getCoordinates());
-            });
-        }
-    </script>
-        </div>
-        <div class="col-md-5 order-md-1" >
-        <div class="contact-info"style="margin-left: 250px;">
-                <h2 style="font-size: 24px;">Контактная информация</h2>
-                <p>Адрес:</p>
-                <p>198095, Россия, г. Санкт-Петербург,</p>
-                <p>ул. Трамвайный пр., д. 6, Лит. А</p>
-                <p>ст. метро Ленинский проспект</p>
-                <p>Телефон:</p>
-                <p>+7 (XXX) XXX-XX-XX</p>
-                <p>Email:</p>
-                <p>info@dora.com</p>
-                <p>service@dora.ru</p>
-            </div>
-        </div>
-      </div>
+<section>
             <article>
-              
+            <div class="center-content">
+                                        <img src='../uploads/7-_oN3fxulo.jpg' alt='Изображение поста' width="300" height="200">
+                                        <h1>малн</h1>
+            </div>
+                    <p style="font-size: 1.5em;">Маления</p>
+                    <p>Автор: Admin</p>
             </article>
 </section>
-<footer style="background-color:black;position: relative;margin-top: 0;">
-<div class="footer-container">
-<div class="footer-column">
-            <p style="color:white;">Адрес:</p>
-            <p style="color:white;">198095, Россия, г. Санкт-Петербург,<br>
-               ул. Трамвайный пр., д. 6, Лит. А</p>
-        </div>
-        <div class="footer-column">
-            <p style="color:white;">Телефон:</p>
-            <p style="color:white;">+7 (XXX) XXX-XX-XX</p>
-        </div>
-        <div class="footer-column">
-            <p style="color:white;">Email:</p>
-            <p style="color:white;">info@dora.com</p>
-        </div>
-        </div>
+    <footer style="background-color:black;">
+      <p class="copyright">&copy; 2023-2024 by Arturchik and Ivan</p>
     </footer>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzA8rQ0PzbgI4WhDVSoc7SC5LbLK78Gdf0xok5RASZX" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93q0I==2JvkxVi+o8gie3Ir+ljXE57pZRI4lQ8Q8gS5w2yFiN0iWmRY/++e0J8" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <script>
       document.addEventListener('DOMContentLoaded', function() {
         const searchButton = document.getElementById('search-button');

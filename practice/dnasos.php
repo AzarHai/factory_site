@@ -15,10 +15,10 @@ if (isset($_POST['post_id'])) {
     }
 
     // SQL запрос для удаления поста по его id
-    $sql = "DELETE FROM posts WHERE id = $post_id";
+    $sql = "DELETE FROM nasos WHERE id = $post_id";
 
     if ($conn->query($sql) === TRUE) {
-        header('Location:/news.php');
+        header('Location:/catalog.php');
     } else {
         echo "Ошибка при удалении поста: " . $conn->error;
     }
